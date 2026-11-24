@@ -11,7 +11,24 @@ This workflow uses existing references. It does not require new manual image lab
 
 The [ASSETS paper](https://doi.org/10.1145/3797867.3829029) describes the rating procedure and distinguishes repeated assessments from distinct images. The importer groups rows by historical page identifier, image URL, and original alternative. It uses at most one consistent rating per reviewer per group. Raw reviewer identifiers are not included in public results.
 
-The included [import summary](external-results.json) records the executed local import and rules baseline. Source hashes identify the downloaded catalog and CSV. No paid AI results are reported in that summary.
+The included [import summary](external-results.json) records the executed local import and rules baseline. Source hashes identify the downloaded catalog and CSV. That earlier snapshot contains no paid AI results. The subsequent [model-run results](external-model-results.json) are recorded separately below.
+
+## Recorded model run
+
+The model run completed 11 ACT and 38 ASSETS requests with zero API errors. The engine and original rule routing were preserved.
+
+| Subset | Rules only | AI only | Hybrid |
+| --- | --- | --- | --- |
+| ACT: 6 pass, 5 issue references | 2 true issue flags, 1 false alarm, 8 abstentions | 5 true issue decisions, 6 true passes; 11/11 agreement | 5 true issue decisions, 5 true passes, 1 false alarm; 10/11 agreement |
+| ASSETS: 36 issue, 2 uncertain references | No issue flags; all binary-reference cases deferred | 33 issues detected, 2 passed despite issue references, 1 uncertain; 33/36 end-to-end issue recall (91.7%) | Same as AI-only because no rule flags bypassed AI |
+
+The two reference-uncertain ASSETS cases are excluded from binary metrics, regardless of model decisions. There are no passing references in that subset, so zero observed false alarms does not establish specificity or false-positive performance.
+
+For ACT, AI-only precision and issue recall are both 100% on these 11 cases. Hybrid issue recall is 100%, but precision is 5/6 (83.3%) because of the inherited title-name false alarm. These are small rule-reference regression results, not general accessibility accuracy estimates. ASSETS AI coverage among the 36 binary references is 35/36 (97.2%).
+
+The comparison does **not** demonstrate that the current hybrid policy improves on AI-only: it loses one ACT case and produces the same ASSETS decisions. The observed failure motivates evaluating a revised rule-routing policy on a separate experiment. Current references and results have not been changed to improve the score.
+
+Successful calls recorded 33,869 input tokens and 4,808 output tokens across both datasets. Their durations sum to approximately 157.5 seconds. This is not an independent hybrid latency or billing measurement; the comparison deliberately requested AI outputs for all cases.
 
 ## W3C outcome handling
 

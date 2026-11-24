@@ -1,0 +1,122 @@
+{
+  "provenance": "Recorded user API run. ACT figures transcribed from the complete report provided in conversation; ASSETS figures extracted from its uploaded report. This is a separate snapshot from the earlier rules-only import report.",
+  "baseline_commit": "27f77917c914bd00c7ca313ccc230b2371a985b1",
+  "act": {
+    "inputs_sha256": "54742bec373f8c077a0e244fd5b67a69f1434b9c2bb59227dd1ee49858334655",
+    "references_sha256": "f5fc85cc67c77642d8eb27b36336629d88381d783440e1019ae0ddfdc17900b4",
+    "cases": 11,
+    "reference_counts": {
+      "pass": 6,
+      "issue": 5
+    },
+    "rules": {
+      "tp": 2,
+      "fp": 1,
+      "fn": 0,
+      "tn": 0,
+      "abstained": 8
+    },
+    "ai": {
+      "tp": 5,
+      "fp": 0,
+      "fn": 0,
+      "tn": 6,
+      "abstained": 0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "coverage": 1.0
+    },
+    "hybrid": {
+      "tp": 5,
+      "fp": 1,
+      "fn": 0,
+      "tn": 5,
+      "abstained": 0,
+      "precision": 0.8333333333333334,
+      "recall": 1.0,
+      "coverage": 1.0
+    },
+    "successful_ai_results": 11,
+    "api_errors": 0,
+    "resources": {
+      "successful_input_tokens": 4293,
+      "successful_output_tokens": 850,
+      "successful_elapsed_seconds": 32.11412654201558
+    }
+  },
+  "assets": {
+    "inputs_sha256": "8299d0adb235f868338baa9fa29dac0e5c5ea93ddf2a5bb7bbdb58a4530b1f7c",
+    "references_sha256": "9a81b38df1c4c88ea5208ff647fbef88657a29105a835479fe9881c2d8ba4c62",
+    "prepared_cases": 38,
+    "reference_counts": {
+      "issue": 36,
+      "uncertain": 2
+    },
+    "rules": {
+      "labeled": 36,
+      "decided": 0,
+      "abstained": 36,
+      "abstained_issue": 36,
+      "abstained_pass": 0,
+      "reference_uncertain": 2,
+      "tp": 0,
+      "fp": 0,
+      "fn": 0,
+      "tn": 0,
+      "precision": null,
+      "recall": 0.0,
+      "coverage": 0.0,
+      "selective_accuracy": null,
+      "correct_fraction_all_labeled": 0.0
+    },
+    "ai": {
+      "labeled": 36,
+      "decided": 35,
+      "abstained": 1,
+      "abstained_issue": 1,
+      "abstained_pass": 0,
+      "reference_uncertain": 2,
+      "tp": 33,
+      "fp": 0,
+      "fn": 2,
+      "tn": 0,
+      "precision": 1.0,
+      "recall": 0.9166666666666666,
+      "coverage": 0.9722222222222222,
+      "selective_accuracy": 0.9428571428571428,
+      "correct_fraction_all_labeled": 0.9166666666666666
+    },
+    "hybrid": {
+      "labeled": 36,
+      "decided": 35,
+      "abstained": 1,
+      "abstained_issue": 1,
+      "abstained_pass": 0,
+      "reference_uncertain": 2,
+      "tp": 33,
+      "fp": 0,
+      "fn": 2,
+      "tn": 0,
+      "precision": 1.0,
+      "recall": 0.9166666666666666,
+      "coverage": 0.9722222222222222,
+      "selective_accuracy": 0.9428571428571428,
+      "correct_fraction_all_labeled": 0.9166666666666666
+    },
+    "successful_ai_results": 38,
+    "api_errors": 0,
+    "resources": {
+      "successful_input_tokens": 29576,
+      "successful_output_tokens": 3958,
+      "successful_elapsed_seconds": 125.41086495906347,
+      "note": "Successful calls only; failed-call usage, retry history, dollar billing, and independent hybrid latency are not measured."
+    }
+  },
+  "limitations": [
+    "ACT covers only 11 imported static img cases, not the full ACT suite or overall WCAG conformance.",
+    "ASSETS uses a project-defined mapping of human quality ratings; its accessible 38-image subset comes from one historical WIRED page and has no passing references.",
+    "Two ASSETS reference-uncertain images are excluded from binary metrics.",
+    "Public benchmarks may have appeared in model training.",
+    "Time is summed successful request duration, not end-to-end application or hybrid deployment latency."
+  ]
+}

@@ -80,7 +80,7 @@ python external_benchmarks.py prepare
 python external_benchmarks.py score
 ```
 
-The recorded import contains 11 W3C cases and 38 ASSETS images. The ASSETS subset has no passing references under the documented rating proxy, so it cannot establish a false-positive rate. The frozen rules baseline and all exclusions are recorded; paid AI evaluation is a separate step and is not claimed as completed. See [sources, limitations, results, and AI commands](evaluation/external-benchmarks.md).
+The recorded import contains 11 W3C cases and 38 ASSETS images. The ASSETS subset has no passing references under the documented rating proxy, so it cannot establish a false-positive rate. The recorded AI run matched all 11 ACT rule references; the hybrid matched 10/11 because it inherited a rule false alarm. On 36 ASSETS issue references, AI and hybrid each detected 33, missed two, and abstained on one (91.7% issue recall); two uncertain references are excluded. These restricted results do not show the hybrid outperforming AI-only. See [sources, limitations, results, and AI commands](evaluation/external-benchmarks.md).
 
 ## Optional fresh public-image evaluation
 
