@@ -1,0 +1,194 @@
+[
+  {
+    "page": "case_01.html",
+    "model": "gpt-6.2-sol",
+    "response_id": "resp_02f70d4bc4004a2a006b05c5deca5487d0aff8a5787ac81dd8",
+    "decision": "issue",
+    "reason": "The empty alt treats the poster as decorative, but it contains essential event details that are not provided in the nearby text.",
+    "evidence": [
+      "The poster identifies the event as “Research Showcase” and shows the year 2026, Friday 27 November, 14:00–16:00, and Design Lab · Room 204.",
+      "The surrounding text describes demos and discussion and offers an “I’m interested” button, but does not give the event name, date, time, or location."
+    ]
+  },
+  {
+    "page": "case_02.html",
+    "model": "gpt-6.2-sol",
+    "response_id": "resp_057e9dac6e62937b006b05c6abfb8887d09a89cba660a40db7",
+    "decision": "issue",
+    "reason": "The alt text correctly identifies the mint seating and kitchenette, but describes an open work area with shared tables instead of the prominent corridor lined with glass-walled rooms.",
+    "evidence": [
+      "The tall glass panels flank the central corridor, and no shared tables are clearly visible.",
+      "The mint bench is visible on the left, and the kitchenette is on the right.",
+      "Nearby text describes the workspace generally but does not convey the layout shown in the photo."
+    ]
+  },
+  {
+    "page": "case_06.html",
+    "model": "gpt-6.2-sol",
+    "response_id": "resp_07389c326092f5f4006b05c6b0680087d0a15c19d3885c91e0",
+    "decision": "issue",
+    "reason": "The alt text broadly matches the photograph, but aria-hidden=\"true\" makes it unavailable to screen reader users. The nearby caption sets the scene without conveying the photograph’s distinctive details.",
+    "evidence": [
+      "The photograph shows snow-covered peaks and a dark forest beneath a blue-purple star field, with a bright diagonal streak.",
+      "The caption, “An alpine night sky, photographed after the last light,” does not describe those details."
+    ]
+  },
+  {
+    "page": "case_07.html",
+    "model": "gpt-6.2-sol",
+    "response_id": "resp_0418df6bfa14d1f0006b05c6b4ddd087d080d6a60144c14837",
+    "decision": "issue",
+    "reason": "The alt text gets the number of watches right but misdescribes their colors and views. The nearby product copy does not provide those visual details.",
+    "evidence": [
+      "The alt says “gold watches with brown leather straps and blue faces,” but the image shows two watches with light silver-toned cases and pale straps.",
+      "One watch shows a black round face; the other shows its light-colored case back."
+    ]
+  },
+  {
+    "page": "case_10.html",
+    "model": "gpt-6.2-sol",
+    "response_id": "resp_02084d1a57e6306a006b05c6b945ec87d089b7fa9e7f9415ff",
+    "decision": "issue",
+    "reason": "The alt text omits the visible Nike branding and describes the dark burgundy laces as black. The nearby product copy does not identify the brand.",
+    "evidence": [
+      "The shoe has a white Nike swoosh, “NIKE” on the tongue, and “NIKE FREE” embossed on the sole.",
+      "The laces appear dark burgundy, not black.",
+      "The alt text correctly describes the red knit upper and white sole."
+    ]
+  },
+  {
+    "page": "case_12.html",
+    "model": "gpt-6.2-sol",
+    "response_id": "resp_0ac123bf93ec0946006b05c6bd8f2c87d0b093a019124b6be3",
+    "decision": "issue",
+    "reason": "The alt text overstates Week 3's count and turns a dip into a steady increase.",
+    "evidence": [
+      "The chart labels Week 3 as 210; the alt text says 310.",
+      "Weeks 1, 2, and 4 match the chart: 180, 240, and 360.",
+      "The surrounding text does not provide the correct Week 3 count."
+    ]
+  },
+  {
+    "page": "case_14.html",
+    "model": "gpt-6.2-sol",
+    "response_id": "resp_06b04e275b2b942e006b05c6c06a8487d08f9d5be45ef29dda",
+    "decision": "issue",
+    "reason": "The alt text identifies the chart’s topic and time span, but neither it nor the nearby text provides the weekly counts or conveys the Week 3 dip.",
+    "evidence": [
+      "The bars show 180, 240, 210, and 360 active learners in Weeks 1–4, respectively.",
+      "The nearby paragraph describes an overall increase and directs readers to the chart for the figures; no equivalent figures or data table are provided."
+    ]
+  },
+  {
+    "page": "case_17.html",
+    "model": "gpt-6.2-sol",
+    "response_id": "resp_0fca3515d59a2e21006b05c6c4381087d0867d24a5500a5fea",
+    "decision": "pass",
+    "reason": "The alt text accurately conveys the main scene and adds visual detail beyond the nearby caption.",
+    "evidence": [
+      "Snow-covered peaks and a dark forest sit beneath a star-filled sky with prominent purple and blue tones.",
+      "The caption identifies the alpine nighttime setting but does not describe the snowy peaks or forest.",
+      "The image contains no visible text and is not part of a control."
+    ]
+  },
+  {
+    "page": "case_21.html",
+    "model": "gpt-6.2-sol",
+    "response_id": "resp_090b37c88362fae5006b05c6c7906c87d091012affbd3e41ed",
+    "decision": "pass",
+    "reason": "The alt text accurately conveys the chart’s title and all four weekly counts.",
+    "evidence": [
+      "The chart shows 180 learners in week 1, 240 in week 2, 210 in week 3, and 360 in week 4, matching the alt text.",
+      "All bars use the same green, so colour does not encode additional information."
+    ]
+  },
+  {
+    "page": "case_22.html",
+    "model": "gpt-6.2-sol",
+    "response_id": "resp_061cc2eea155cbe7006b05c6cab4dc87d0befc3baa8ae18831",
+    "decision": "pass",
+    "reason": "The nearby text conveys the photo’s main content, so empty alt text appropriately avoids repetition.",
+    "evidence": [
+      "The photo shows a warmly lit café interior with pendant lights and a large illuminated “CAFE” sign, all described in the adjacent paragraph.",
+      "The chalkboard menus are background details in the hero photo. A separate “Explore the menu” link provides the menu navigation, and the image is not part of that link."
+    ]
+  },
+  {
+    "page": "case_23.html",
+    "model": "gpt-6.2-sol",
+    "response_id": "resp_093f9874f9567715006b05c6ce075087d0a2e6e995d4d738c8",
+    "decision": "pass",
+    "reason": "The alt text accurately describes the collaborative scene and adds the pointing gesture that the nearby caption does not mention.",
+    "evidence": [
+      "The photo shows one person pointing at the laptop screen while another uses the trackpad.",
+      "The caption says only “A collaborative working session.”",
+      "There is no legible screen text or enclosing control to account for."
+    ]
+  },
+  {
+    "page": "case_24.html",
+    "model": "gpt-6.2-sol",
+    "response_id": "resp_06029068111cc396006b05c6d1169087d08b919fd72682b492",
+    "decision": "issue",
+    "reason": "The empty alt omits the event year, which appears on the poster but not in the nearby text.",
+    "evidence": [
+      "The poster reads “COMMON GROUND / 2026”; the nearby event listing gives “Friday 27 November” without a year.",
+      "The event name, time, and location are repeated in nearby text, but the poster’s tagline, “Ideas into action.”, is not."
+    ]
+  },
+  {
+    "page": "case_26.html",
+    "model": "gpt-6.2-sol",
+    "response_id": "resp_0c7526b10e4e7cec006b05c6d45e8887d087a9bfbaea40c5e4",
+    "decision": "pass",
+    "reason": "The alt text accurately describes the product photo, including the white straps and the contrast between the black watch face and the white case back.",
+    "evidence": [
+      "The photo shows two white-strapped watches: one face-up with a black display and one flipped over to show its white back.",
+      "The photo contains no visible text or numbers and is not part of the separate “Add to collection” button."
+    ]
+  },
+  {
+    "page": "case_27.html",
+    "model": "gpt-6.2-sol",
+    "response_id": "resp_0d8bee9efc4d2e5c006b05c6d7aadc87d09cc7ced9a5c2622c",
+    "decision": "pass",
+    "reason": "The alt text identifies the chart’s subject and time span, and the adjacent table provides all four values shown in the chart.",
+    "evidence": [
+      "The chart and table agree: Week 1 — 180; Week 2 — 240; Week 3 — 210; Week 4 — 360.",
+      "All bars use the same color, so color does not convey a separate category or meaning."
+    ]
+  },
+  {
+    "page": "case_28.html",
+    "model": "gpt-6.2-sol",
+    "response_id": "resp_006a58e8d1592fc7006b05c6dacfb087d093caf90a70ad22a2",
+    "decision": "issue",
+    "reason": "The alt text clearly names the registration link, but some event details shown on the poster are missing from both the alt text and nearby HTML.",
+    "evidence": [
+      "The image is the only content of the link to #registration, and its alt text identifies the action and event.",
+      "Nearby text repeats “Ideas into action,” “27 November,” “14:00–16:00,” and “Design Lab,” but does not include the year 2026, the weekday Friday, or Room 204."
+    ]
+  },
+  {
+    "page": "case_29.html",
+    "model": "gpt-6.2-sol",
+    "response_id": "resp_0d583f52cbf438f9006b05c6de2e6c87d08e61a70ae47ae79d",
+    "decision": "pass",
+    "reason": "The arrow is a decorative cue. The link text already tells users what the link does, so empty alt text is appropriate.",
+    "evidence": [
+      "The image shows a right-pointing arrow with no text or numbers.",
+      "The enclosing link is named by its visible text: “View the research funding guide.”"
+    ]
+  },
+  {
+    "page": "case_30.html",
+    "model": "gpt-6.2-sol",
+    "response_id": "resp_0b75765e25277bac006b05c6e1269c87d081fc2e87a769e269",
+    "decision": "pass",
+    "reason": "The calendar icon has no unique information, and the enclosing button’s accessible name conveys its purpose. The empty alt avoids a redundant announcement.",
+    "evidence": [
+      "The image shows a calendar icon with no text or specific dates.",
+      "The enclosing button has aria-label=\"View available dates\"."
+    ]
+  }
+]

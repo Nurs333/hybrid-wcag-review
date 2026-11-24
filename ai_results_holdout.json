@@ -1,0 +1,54 @@
+[
+  {
+    "page": "case_03.html",
+    "model": "gpt-6.2-sol",
+    "response_id": "resp_01c31a8b1a44d330006b05cd40d8b887d0a24e2cfa436a7fdb",
+    "decision": "pass",
+    "reason": "The button’s accessible name conveys the close icon’s function, so the image can have empty alt text.",
+    "evidence": [
+      "The image shows an X-shaped close icon with no text.",
+      "The enclosing button is labeled “Dismiss workspace notice.”"
+    ],
+    "assessment_key": "40899c295256fb6e7c7a5e52b94fa8145a92ea8e2b6bdde7606a484b48c998ab",
+    "cache_origin": "uploaded_results"
+  },
+  {
+    "page": "case_08.html",
+    "model": "gpt-6.2-sol",
+    "response_id": "resp_0a8fde3b646c7f3d006b05cd43c5dc87d0bd914d1a27ed681b",
+    "decision": "pass",
+    "reason": "The alt identifies the map and its endpoints, and the nearby “Your route” text conveys all the directions needed to follow the marked route.",
+    "evidence": [
+      "The map and nearby text both direct users 100 metres east from West Gate to the Library, then 50 metres north to the Design Lab, Room 204.",
+      "The garden is shown off the route and is not used as a navigation landmark."
+    ],
+    "assessment_key": "16050a355321d69a6ec72ab7cda8d490582f34fb788bd69e272df8798b15264c",
+    "cache_origin": "uploaded_results"
+  },
+  {
+    "page": "case_16.html",
+    "model": "gpt-6.2-sol",
+    "response_id": "resp_0a7d89398a3c8307006b05cd46ea3c87d08b6db2a18d08d2e2",
+    "decision": "issue",
+    "reason": "The alt text identifies the start and destination but omits the directions needed to follow the route. The nearby text does not provide those directions.",
+    "evidence": [
+      "The map shows a route 100 m east from West Gate to the Library, then 50 m north to the Design Lab (Room 204).",
+      "The nearby text names Room 204 but tells visitors to follow the map without giving the distances, directions, or turning point."
+    ],
+    "assessment_key": "1fd93ebebf72154b371340a655bb0dd0f8bb0f0e84c71b2432eb7a98acc7f796",
+    "cache_origin": "uploaded_results"
+  },
+  {
+    "page": "case_25.html",
+    "model": "gpt-6.2-sol",
+    "response_id": "resp_013c44bf07d760ce006b05cd49dd5c87d0896f89ea0fedf4ba",
+    "decision": "pass",
+    "reason": "The nearby introduction conveys the photo’s essential scene, so empty alt text avoids repeating it.",
+    "evidence": [
+      "The introduction describes a “purple, star-filled sky above snowy peaks and a dark forest,” matching the main elements of the photo.",
+      "The bright streak in the sky is an incidental detail. The photo contains no text and is not inside a control."
+    ],
+    "assessment_key": "a6d4b39854ffef54170637ecf23ec160cf4c9c7efdf676c8ed52b398e0403ab2",
+    "cache_origin": "uploaded_results"
+  }
+]

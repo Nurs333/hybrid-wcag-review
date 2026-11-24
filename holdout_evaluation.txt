@@ -1,0 +1,13 @@
+case_03.html | expected: pass | decision: pass | source: AI
+case_04.html | expected: issue | decision: issue | source: rules
+case_08.html | expected: pass | decision: pass | source: AI
+case_16.html | expected: issue | decision: issue | source: AI
+case_18.html | expected: issue | decision: issue | source: rules
+case_25.html | expected: pass | decision: pass | source: AI
+
+Cases evaluated: 6
+Correctly identified issues: 3
+False alarms: 0
+Missed issues: 0
+Correct passes: 3
+Uncertain — human review needed: 0

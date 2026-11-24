@@ -1,0 +1,51 @@
+case_01.html | expected: issue | decision: issue | source: AI
+case_02.html | expected: pass | decision: issue | source: AI
+FALSE ALARM: case_02.html
+Reference reason: The image description conveys the workspace layout.
+AI reason: The alt text correctly identifies the mint seating and kitchenette, but describes an open work area with shared tables instead of the prominent corridor lined with glass-walled rooms.
+AI evidence: ['The tall glass panels flank the central corridor, and no shared tables are clearly visible.', 'The mint bench is visible on the left, and the kitchenette is on the right.', 'Nearby text describes the workspace generally but does not convey the layout shown in the photo.']
+
+case_05.html | expected: issue | decision: issue | source: rules
+case_06.html | expected: issue | decision: issue | source: AI
+case_07.html | expected: issue | decision: issue | source: AI
+case_09.html | expected: issue | decision: issue | source: rules
+case_10.html | expected: pass | decision: issue | source: AI
+FALSE ALARM: case_10.html
+Reference reason: The product image has a useful visual description.
+AI reason: The alt text omits the visible Nike branding and describes the dark burgundy laces as black. The nearby product copy does not identify the brand.
+AI evidence: ['The shoe has a white Nike swoosh, “NIKE” on the tongue, and “NIKE FREE” embossed on the sole.', 'The laces appear dark burgundy, not black.', 'The alt text correctly describes the red knit upper and white sole.']
+
+case_11.html | expected: issue | decision: issue | source: rules
+case_12.html | expected: issue | decision: issue | source: AI
+case_13.html | expected: issue | decision: issue | source: rules
+case_14.html | expected: issue | decision: issue | source: AI
+case_15.html | expected: issue | decision: issue | source: rules
+case_17.html | expected: pass | decision: pass | source: AI
+case_19.html | expected: issue | decision: issue | source: rules
+case_20.html | expected: issue | decision: issue | source: rules
+case_21.html | expected: pass | decision: pass | source: AI
+case_22.html | expected: pass | decision: pass | source: AI
+case_23.html | expected: pass | decision: pass | source: AI
+case_24.html | expected: pass | decision: issue | source: AI
+FALSE ALARM: case_24.html
+Reference reason: The nearby real text repeats all essential poster details, so empty alt is appropriate.
+AI reason: The empty alt omits the event year, which appears on the poster but not in the nearby text.
+AI evidence: ['The poster reads “COMMON GROUND / 2026”; the nearby event listing gives “Friday 27 November” without a year.', 'The event name, time, and location are repeated in nearby text, but the poster’s tagline, “Ideas into action.”, is not.']
+
+case_26.html | expected: pass | decision: pass | source: AI
+case_27.html | expected: pass | decision: pass | source: AI
+case_28.html | expected: pass | decision: issue | source: AI
+FALSE ALARM: case_28.html
+Reference reason: The artwork link has an accessible name describing registration.
+AI reason: The alt text clearly names the registration link, but some event details shown on the poster are missing from both the alt text and nearby HTML.
+AI evidence: ['The image is the only content of the link to #registration, and its alt text identifies the action and event.', 'Nearby text repeats “Ideas into action,” “27 November,” “14:00–16:00,” and “Design Lab,” but does not include the year 2026, the weekday Friday, or Room 204.']
+
+case_29.html | expected: pass | decision: pass | source: AI
+case_30.html | expected: pass | decision: pass | source: AI
+
+Cases evaluated: 24
+Correctly identified issues: 12
+False alarms: 4
+Missed issues: 0
+Correct passes: 8
+Uncertain — human review needed: 0

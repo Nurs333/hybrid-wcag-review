@@ -1,0 +1,24 @@
+{
+  "assets/office.jpg": "https://images.unsplash.com/photo-1497366216548-37526070297c?w=1400&q=85&fit=crop",
+  "assets/mountain.jpg": "https://images.unsplash.com/photo-1519681393784-d120267933ba?w=1400&q=85&fit=crop",
+  "assets/coffee.jpg": "https://images.unsplash.com/photo-1501339847302-ac426a4a7cbb?w=1400&q=85&fit=crop",
+  "assets/watch.jpg": "https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=1400&q=85&fit=crop",
+  "assets/shoes.jpg": "https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=1400&q=85&fit=crop",
+  "assets/work.jpg": "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=1400&q=85&fit=crop",
+  "assets/InstrumentSans-Regular.ttf": {
+    "source": "https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400&display=swap",
+    "download": "https://fonts.gstatic.com/s/instrumentsans/v4/pximypc9vsFDm051Uf6KVwgkfoSxQ0GsQv8ToedPibnr-yp2JGEJOH9npSTF-Qf1.ttf",
+    "license_file": "assets/instrumentsans-OFL.txt"
+  },
+  "assets/InstrumentSans-Semibold.ttf": {
+    "source": "https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@600&display=swap",
+    "download": "https://fonts.gstatic.com/s/instrumentsans/v4/pximypc9vsFDm051Uf6KVwgkfoSxQ0GsQv8ToedPibnr-yp2JGEJOH9npSQb_gf1.ttf",
+    "license_file": "assets/instrumentsans-OFL.txt"
+  },
+  "assets/InstrumentSerif.ttf": {
+    "source": "https://fonts.googleapis.com/css2?family=Instrument+Serif&display=swap",
+    "download": "https://fonts.gstatic.com/s/instrumentserif/v5/jizBRFtNs2ka5fXjeivQ4LroWlx-2zI.ttf",
+    "license": "https://openfontlicense.org/open-font-license-official-text/",
+    "license_file": "assets/instrumentserif-OFL.txt"
+  }
+}

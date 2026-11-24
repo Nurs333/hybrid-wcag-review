@@ -1,0 +1,311 @@
+{
+  "scan_id": "0b4ff4ad807a4908ac79c13423e757ec",
+  "requested_url": "https://49thcoffee.com/pages/main-st",
+  "url": "https://49thcoffee.com/pages/main-st",
+  "title": "Locations - Main St | 49th Parallel Coffee Roasters",
+  "mode": "browser",
+  "max_images": 12,
+  "images_found": 6,
+  "images": [
+    {
+      "image_key": "image_001",
+      "page": "https://49thcoffee.com/pages/main-st",
+      "scan_id": "0b4ff4ad807a4908ac79c13423e757ec",
+      "image_id": null,
+      "src": "https://49thcoffee.com/cdn/shop/files/Updated_Logo_May_2023_222x121.png?v=1684174087",
+      "alt": "49th Parallel Coffee Roasters",
+      "image_html": "<img src=\"//49thcoffee.com/cdn/shop/files/Updated_Logo_May_2023_111x60.png?v=1684174087\" alt=\"49th Parallel Coffee Roasters\" data-rimg=\"loaded\" data-rimg-scale=\"2\" data-rimg-template=\"//49thcoffee.com/cdn/shop/files/Updated_Logo_May_2023_{size}.png?v=1684174087\" data-rimg-max=\"861x468\" data-rimg-crop=\"\" srcset=\"//49thcoffee.com/cdn/shop/files/Updated_Logo_May_2023_222x121.png?v=1684174087 1.00x\" class=\"desktop-logo-image\" style=\"\n            height: 60px;\n          \" data-rimg-template-svg=\"data:image/svg+xml;utf8,&lt;svg%20xmlns='http://www.w3.org/2000/svg'%20width='111'%20height='60'&gt;&lt;/svg&gt;\">",
+      "context_html": "<a class=\"site-logo-link\" href=\"/\">\n        \n          \n\n        \n          \n          \n\n          \n\n          \n\n  \n    <noscript data-rimg-noscript=\"\">\n      <img\n        \n          src=\"//49thcoffee.com/cdn/shop/files/Updated_Logo_May_2023_111x60.png?v=1684174087\"\n        \n\n        alt=\"49th Parallel Coffee Roasters\"\n        data-rimg=\"noscript\"\n        srcset=\"//49thcoffee.com/cdn/shop/files/Updated_Logo_May_2023_111x60.png?v=1684174087 1x, //49thcoffee.com/cdn/shop/files/Updated_Logo_May_2023_222x120.png?v=1684174087 2x, //49thcoffee.com/cdn/shop/files/Updated_Logo_May_2023_333x180.png?v=1684174087 3x, //49thcoffee.com/cdn/shop/files/Updated_Logo_May_2023_444x240.png?v=1684174087 4x\"\n        class=\"desktop-logo-image\"\n        style=\"\n            height: 60px;\n          \"\n        \n      >\n    </noscript>\n  \n\n  <img src=\"//49thcoffee.com/cdn/shop/files/Updated_Logo_May_2023_111x60.png?v=1684174087\" alt=\"49th Parallel Coffee Roasters\" data-rimg=\"loaded\" data-rimg-scale=\"2\" data-rimg-template=\"//49thcoffee.com/cdn/shop/files/Updated_Logo_May_2023_{size}.png?v=1684174087\" data-rimg-max=\"861x468\" data-rimg-crop=\"\" srcset=\"//49thcoffee.com/cdn/shop/files/Updated_Logo_May_2023_222x121.png?v=1684174087 1.00x\" class=\"desktop-logo-image\" style=\"\n            height: 60px;\n          \" data-rimg-template-svg=\"data:image/svg+xml;utf8,&lt;svg%20xmlns='http://www.w3.org/2000/svg'%20width='111'%20height='60'&gt;&lt;/svg&gt;\">\n\n\n\n\n          \n        \n\n        \n          \n\n          \n          \n\n          \n\n          \n\n  \n\n  <img src=\"//49thcoffee.com/cdn/shop/files/Updated_Logo_May_2023_111x60.png?v=1684174087\" alt=\"49th Parallel Coffee Roasters\" data-rimg=\"\" srcset=\"//49thcoffee.com/cdn/shop/files/Updated_Logo_May_2023_111x60.png?v=1684174087 1x, //49thcoffee.com/cdn/shop/files/Updated_Logo_May_2023_222x120.png?v=1684174087 2x, //49thcoffee.com/cdn/shop/files/Updated_Logo_May_2023_333x180.png?v=1684174087 3x, //49thcoffee.com/cdn/shop/files/Updated_Logo_May_2023_444x240.png?v=1684174087 4x\" class=\"mobile-logo-image\" style=\"\n            max-height: 60px;\n          \">\n\n\n\n\n          \n        \n      </a>",
+      "context_truncated": false,
+      "nearby_text": "",
+      "inside_control": true,
+      "control_type": "a",
+      "control_text": "",
+      "control_aria_label": null,
+      "control_labelledby_text": "",
+      "control_other_image_alt": "49th Parallel Coffee Roasters",
+      "image_aria_label": null,
+      "image_labelledby_text": "",
+      "aria_hidden": false,
+      "role": null,
+      "visible": true,
+      "loaded": true,
+      "rendered_width": 110.078125,
+      "rendered_height": 60,
+      "capture_method": "rendered_element",
+      "capture_status": "captured",
+      "rule_result": "needs_review",
+      "rule_reason": "Requires further evaluation.",
+      "rule_flags": [],
+      "decision": "pass",
+      "source": "AI",
+      "ai_result": {
+        "page": "https://49thcoffee.com/pages/main-st",
+        "model": "gpt-6.2-sol",
+        "usage": {
+          "input_tokens": 1324,
+          "input_tokens_details": {
+            "cache_write_tokens": 1321,
+            "cached_tokens": 0,
+            "cache_write_tokens_details": {
+              "ttl_12h_tokens": 0,
+              "ttl_30m_tokens": 1321
+            }
+          },
+          "output_tokens": 97,
+          "output_tokens_details": {
+            "reasoning_tokens": 0
+          },
+          "total_tokens": 1421
+        },
+        "decision": "pass",
+        "reason": "The alt text matches the logo’s wording and gives the homepage link a meaningful name. The logo’s gray color and stacked layout do not convey additional information.",
+        "evidence": [
+          "The logo reads “49th Parallel Coffee Roasters,” matching the alt text.",
+          "The enclosing link points to “/”, and the image is not aria-hidden."
+        ]
+      }
+    },
+    {
+      "image_key": "image_002",
+      "page": "https://49thcoffee.com/pages/main-st",
+      "scan_id": "0b4ff4ad807a4908ac79c13423e757ec",
+      "image_id": null,
+      "src": "https://49thcoffee.com/cdn/shop/files/Updated_Logo_May_2023_111x60.png?v=1684174087",
+      "alt": "49th Parallel Coffee Roasters",
+      "image_html": "<img src=\"//49thcoffee.com/cdn/shop/files/Updated_Logo_May_2023_111x60.png?v=1684174087\" alt=\"49th Parallel Coffee Roasters\" data-rimg=\"\" srcset=\"//49thcoffee.com/cdn/shop/files/Updated_Logo_May_2023_111x60.png?v=1684174087 1x, //49thcoffee.com/cdn/shop/files/Updated_Logo_May_2023_222x120.png?v=1684174087 2x, //49thcoffee.com/cdn/shop/files/Updated_Logo_May_2023_333x180.png?v=1684174087 3x, //49thcoffee.com/cdn/shop/files/Updated_Logo_May_2023_444x240.png?v=1684174087 4x\" class=\"mobile-logo-image\" style=\"\n            max-height: 60px;\n          \">",
+      "context_html": "<a class=\"site-logo-link\" href=\"/\">\n        \n          \n\n        \n          \n          \n\n          \n\n          \n\n  \n    <noscript data-rimg-noscript=\"\">\n      <img\n        \n          src=\"//49thcoffee.com/cdn/shop/files/Updated_Logo_May_2023_111x60.png?v=1684174087\"\n        \n\n        alt=\"49th Parallel Coffee Roasters\"\n        data-rimg=\"noscript\"\n        srcset=\"//49thcoffee.com/cdn/shop/files/Updated_Logo_May_2023_111x60.png?v=1684174087 1x, //49thcoffee.com/cdn/shop/files/Updated_Logo_May_2023_222x120.png?v=1684174087 2x, //49thcoffee.com/cdn/shop/files/Updated_Logo_May_2023_333x180.png?v=1684174087 3x, //49thcoffee.com/cdn/shop/files/Updated_Logo_May_2023_444x240.png?v=1684174087 4x\"\n        class=\"desktop-logo-image\"\n        style=\"\n            height: 60px;\n          \"\n        \n      >\n    </noscript>\n  \n\n  <img src=\"//49thcoffee.com/cdn/shop/files/Updated_Logo_May_2023_111x60.png?v=1684174087\" alt=\"49th Parallel Coffee Roasters\" data-rimg=\"loaded\" data-rimg-scale=\"2\" data-rimg-template=\"//49thcoffee.com/cdn/shop/files/Updated_Logo_May_2023_{size}.png?v=1684174087\" data-rimg-max=\"861x468\" data-rimg-crop=\"\" srcset=\"//49thcoffee.com/cdn/shop/files/Updated_Logo_May_2023_222x121.png?v=1684174087 1.00x\" class=\"desktop-logo-image\" style=\"\n            height: 60px;\n          \" data-rimg-template-svg=\"data:image/svg+xml;utf8,&lt;svg%20xmlns='http://www.w3.org/2000/svg'%20width='111'%20height='60'&gt;&lt;/svg&gt;\">\n\n\n\n\n          \n        \n\n        \n          \n\n          \n          \n\n          \n\n          \n\n  \n\n  <img src=\"//49thcoffee.com/cdn/shop/files/Updated_Logo_May_2023_111x60.png?v=1684174087\" alt=\"49th Parallel Coffee Roasters\" data-rimg=\"\" srcset=\"//49thcoffee.com/cdn/shop/files/Updated_Logo_May_2023_111x60.png?v=1684174087 1x, //49thcoffee.com/cdn/shop/files/Updated_Logo_May_2023_222x120.png?v=1684174087 2x, //49thcoffee.com/cdn/shop/files/Updated_Logo_May_2023_333x180.png?v=1684174087 3x, //49thcoffee.com/cdn/shop/files/Updated_Logo_May_2023_444x240.png?v=1684174087 4x\" class=\"mobile-logo-image\" style=\"\n            max-height: 60px;\n          \">\n\n\n\n\n          \n        \n      </a>",
+      "context_truncated": false,
+      "nearby_text": "",
+      "inside_control": true,
+      "control_type": "a",
+      "control_text": "",
+      "control_aria_label": null,
+      "control_labelledby_text": "",
+      "control_other_image_alt": "49th Parallel Coffee Roasters",
+      "image_aria_label": null,
+      "image_labelledby_text": "",
+      "aria_hidden": false,
+      "role": null,
+      "visible": false,
+      "loaded": true,
+      "rendered_width": 0,
+      "rendered_height": 0,
+      "capture_method": "rendered_element",
+      "capture_status": "not_visible",
+      "capture_error": "The image is hidden or has no rendered dimensions.",
+      "rule_result": "needs_review",
+      "rule_reason": "Requires further evaluation.",
+      "rule_flags": [],
+      "decision": "not_visible",
+      "source": "capture"
+    },
+    {
+      "image_key": "image_003",
+      "page": "https://49thcoffee.com/pages/main-st",
+      "scan_id": "0b4ff4ad807a4908ac79c13423e757ec",
+      "image_id": null,
+      "src": "https://49thcoffee.com/cdn/shop/files/Main_S1_1500x750.png?v=1622570475",
+      "alt": "49th Parallel Coffee Roasters - Direct trade Specialty Coffee  - Main St Cafe",
+      "image_html": "<img src=\"//49thcoffee.com/cdn/shop/files/Main_S1_1350x675.png?v=1622570475\" alt=\"49th Parallel Coffee Roasters - Direct trade Specialty Coffee  - Main St Cafe\" data-rimg=\"loaded\" data-rimg-scale=\"2\" data-rimg-template=\"//49thcoffee.com/cdn/shop/files/Main_S1_{size}.png?v=1622570475\" data-rimg-max=\"1500x750\" data-rimg-crop=\"\" srcset=\"//49thcoffee.com/cdn/shop/files/Main_S1_1500x750.png?v=1622570475 1.00x\" class=\"promo-block-grid--background\" data-rimg-template-svg=\"data:image/svg+xml;utf8,&lt;svg%20xmlns='http://www.w3.org/2000/svg'%20width='1350'%20height='675'&gt;&lt;/svg&gt;\">",
+      "context_html": "<section class=\"promo-grid--container\" id=\"shopify-section-1589938713035\">\n  \n<div class=\"home-section--content\">\n\n      <div class=\"promo-grid--inner\">\n        \n\n        \n\n          \n\n          \n\n          \n          \n          \n          \n\n          \n          \n<div class=\"promo-block-grid      promo-block-grid--index-1      promo-block-grid--1589938713035--1            promo-grid--half-width            desktop-block      \" data-rimg=\"loaded\" data-rimg-scale=\"2\" data-rimg-template=\"//49thcoffee.com/cdn/shop/files/Main_S1_{size}.png?v=1622570475\" data-rimg-max=\"1500x750\" data-rimg-crop=\"\" style=\"background-image: url(&quot;//49thcoffee.com/cdn/shop/files/Main_S1_1500x750.png?v=1622570475&quot;);\">\n            \n              \n\n  \n    <noscript data-rimg-noscript=\"\">\n      <img\n        \n          src=\"//49thcoffee.com/cdn/shop/files/Main_S1_1350x675.png?v=1622570475\"\n        \n\n        alt=\"49th Parallel Coffee Roasters - Direct trade Specialty Coffee  - Main St Cafe\"\n        data-rimg=\"noscript\"\n        srcset=\"//49thcoffee.com/cdn/shop/files/Main_S1_1350x675.png?v=1622570475 1x, //49thcoffee.com/cdn/shop/files/Main_S1_1499x749.png?v=1622570475 1.11x\"\n        class=\"promo-block-grid--background\"\n        \n        \n      >\n    </noscript>\n  \n\n  <img src=\"//49thcoffee.com/cdn/shop/files/Main_S1_1350x675.png?v=1622570475\" alt=\"49th Parallel Coffee Roasters - Direct trade Specialty Coffee  - Main St Cafe\" data-rimg=\"loaded\" data-rimg-scale=\"2\" data-rimg-template=\"//49thcoffee.com/cdn/shop/files/Main_S1_{size}.png?v=1622570475\" data-rimg-max=\"1500x750\" data-rimg-crop=\"\" srcset=\"//49thcoffee.com/cdn/shop/files/Main_S1_1500x750.png?v=1622570475 1.00x\" class=\"promo-block-grid--background\" data-rimg-template-svg=\"data:image/svg+xml;utf8,&lt;svg%20xmlns='http://www.w3.org/2000/svg'%20width='1350'%20height='675'&gt;&lt;/svg&gt;\">\n\n\n\n  <div data-rimg-canvas=\"\"></div>\n\n\n            \n\n              <div class=\"promo-block-grid--content       promo-block-grid--content-align-top-left       promo-grid--maintain-aspect-ratio              promo-block-grid--unlinked       \" data-promo-block-grid-content=\"\">\n            \n\n            <div class=\"promo-block-grid--content-wrapper\">\n              \n              \n\n              \n\n              \n            </div>\n\n            \n\n            \n              </div>\n            \n          </div>\n\n\n\n\n\n          \n\n          \n\n          \n          \n          \n          \n\n          \n          \n<div class=\"promo-block-grid      promo-block-grid--index-1      promo-block-grid--1589938713035--2            promo-grid--half-width      promo-block--right      desktop-block      \" data-rimg=\"loaded\" data-rimg-scale=\"2\" data-rimg-template=\"//49thcoffee.com/cdn/shop/files/Main_S2_{size}.png?v=1622570511\" data-rimg-max=\"1500x750\" data-rimg-crop=\"\" style=\"background-image: url(&quot;//49thcoffee.com/cdn/shop/files/Main_S2_1500x750.png?v=1622570511&quot;);\">\n            \n              \n\n  \n    <noscript data-rimg-noscript=\"\">\n      <img\n        \n          src=\"//49thcoffee.com/cdn/shop/files/Main_S2_1350x675.png?v=1622570511\"\n        \n\n        alt=\"49th Parallel Coffee Roasters - Direct trade Specialty Coffee \"\n        data-rimg=\"noscript\"\n        srcset=\"//49thcoffee.com/cdn/shop/files/Main_S2_1350x675.png?v=1622570511 1x, //49thcoffee.com/cdn/shop/files/Main_S2_1499x749.png?v=1622570511 1.11x\"\n        class=\"promo-block-grid--background\"\n        \n        \n      >\n    </noscript>\n  \n\n  <img src=\"//49thcoffee.com/cdn/shop/files/Main_S2_1350x675.png?v=1622570511\" alt=\"49th Parallel Coffee Roasters - Direct trade Specialty Coffee \" data-rimg=\"loaded\" data-rimg-scale=\"2\" data-rimg-template=\"//49thcoffee.com/cdn/shop/files/Main_S2_{size}.png?v=1622570511\" data-rimg-max=\"1500x750\" data-rimg-crop=\"\" srcset=\"//49thcoffee.com/cdn/shop/files/Main_S2_1500x750.png?v=1622570511 1.00x\" class=\"promo-block-grid--background\" data-rimg-template-svg=\"data:image/svg+xml;utf8,&lt;svg%20xmlns='http://www.w3.org/2000/svg'%20width='1350'%20height='675'&gt;&lt;/svg&gt;\">\n\n\n\n  <div data-rimg-canvas=\"\"></div>\n\n\n            \n\n              <div class=\"promo-block-grid--content       promo-block-grid--content-align-top-left       promo-grid--maintain-aspect-ratio              promo-block-grid--unlinked       \" data-promo-block-grid-content=\"\">\n            \n\n            <div class=\"promo-block-grid--content-wrapper\">\n              \n              \n\n              \n\n              \n            </div>\n\n            \n\n            \n              </div>\n            \n          </div>\n\n\n\n        \n        \n          \n\n\n\n\n\n\n\n<div class=\"promo-block-grid promo-block-grid--index-19 promo-block-grid--1589938713035  mobile-block\">\n  \n\n    <div class=\"promo-block-grid--content  promo-block-grid--content-align-top-left  promo-grid--maintain-aspect-ratio    promo-block-grid--unlinked  onboarding\" data-promo-block-grid-content=\"\">\n  \n\n  <div class=\"promo-block-grid--content-wrapper\">\n    \n    \n\n    \n\n    \n  </div>\n\n  \n\n  \n    </div>\n  \n</div>\n\n\n          \n\n\n\n\n\n\n\n<div class=\"promo-block-grid promo-block-grid--index-19 promo-block-grid--1589938713035  mobile-block\">\n  \n\n    <div class=\"promo-block-grid--content  promo-block-grid--content-align-top-left  promo-grid--maintain-aspect-ratio    promo-block-grid--unlinked  onboarding\" data-promo-block-grid-content=\"\">\n  \n\n  <div class=\"promo-block-grid--content-wrapper\">\n    \n    \n\n    \n\n    \n  </div>\n\n  \n\n  \n    </div>\n  \n</div>\n\n\n      </div>\n\n  </div>\n\n\n\n<style>\n  \n    .promo-block-grid--1589938713035--1 {\n      \n\n      \n    }\n\n    \n      .promo-block-grid--1589938713035--1.desktop-block .promo-block-grid--content {\n        height:380px;\n      }\n\n      @media screen and (max-width: 723px){\n        .promo-block-grid--1589938713035--1.desktop-block .promo-block-grid--content {\n          height:270px;\n        } \n      }\n\n      \n    \n\n    \n\n\n    .promo-block-grid--1589938713035--1 .button-signpost {\n      color:#272223;\n    }\n\n    .promo-block-grid--1589938713035--1 .promo-block-grid--preheading {\n      color:#272223;\n    }\n\n    .promo-block-grid--1589938713035--1 .promo-block-grid--header {\n      color:#272223;\n    }\n\n    .promo-block-grid--1589938713035--1 .promo-block-grid--text {\n      color:#272223;\n    }\n\n    .promo-block-grid--1589938713035--2 {\n      \n\n      \n    }\n\n    \n      .promo-block-grid--1589938713035--2.desktop-block .promo-block-grid--content {\n        height:380px;\n      }\n\n      @media screen and (max-width: 723px){\n        .promo-block-grid--1589938713035--2.desktop-block .promo-block-grid--content {\n          height:270px;\n        } \n      }\n\n      \n    \n\n    \n\n\n    .promo-block-grid--1589938713035--2 .button-signpost {\n      color:#272223;\n    }\n\n    .promo-block-grid--1589938713035--2 .promo-block-grid--preheading {\n      color:#272223;\n    }\n\n    .promo-block-grid--1589938713035--2 .promo-block-grid--header {\n      color:#272223;\n    }\n\n    .promo-block-grid--1589938713035--2 .promo-block-grid--text {\n      color:#272223;\n    }\n  \n  \n</style>\n\n</section>",
+      "context_truncated": false,
+      "nearby_text": "",
+      "inside_control": false,
+      "control_type": null,
+      "control_text": "",
+      "control_aria_label": null,
+      "control_labelledby_text": "",
+      "control_other_image_alt": "",
+      "image_aria_label": null,
+      "image_labelledby_text": "",
+      "aria_hidden": false,
+      "role": null,
+      "visible": false,
+      "loaded": true,
+      "rendered_width": 1,
+      "rendered_height": 1,
+      "capture_method": "rendered_element",
+      "capture_status": "not_visible",
+      "capture_error": "The image is hidden or has no rendered dimensions.",
+      "rule_result": "needs_review",
+      "rule_reason": "Requires further evaluation.",
+      "rule_flags": [],
+      "decision": "not_visible",
+      "source": "capture"
+    },
+    {
+      "image_key": "image_004",
+      "page": "https://49thcoffee.com/pages/main-st",
+      "scan_id": "0b4ff4ad807a4908ac79c13423e757ec",
+      "image_id": null,
+      "src": "https://49thcoffee.com/cdn/shop/files/Main_S2_1500x750.png?v=1622570511",
+      "alt": "49th Parallel Coffee Roasters - Direct trade Specialty Coffee ",
+      "image_html": "<img src=\"//49thcoffee.com/cdn/shop/files/Main_S2_1350x675.png?v=1622570511\" alt=\"49th Parallel Coffee Roasters - Direct trade Specialty Coffee \" data-rimg=\"loaded\" data-rimg-scale=\"2\" data-rimg-template=\"//49thcoffee.com/cdn/shop/files/Main_S2_{size}.png?v=1622570511\" data-rimg-max=\"1500x750\" data-rimg-crop=\"\" srcset=\"//49thcoffee.com/cdn/shop/files/Main_S2_1500x750.png?v=1622570511 1.00x\" class=\"promo-block-grid--background\" data-rimg-template-svg=\"data:image/svg+xml;utf8,&lt;svg%20xmlns='http://www.w3.org/2000/svg'%20width='1350'%20height='675'&gt;&lt;/svg&gt;\">",
+      "context_html": "<section class=\"promo-grid--container\" id=\"shopify-section-1589938713035\">\n  \n<div class=\"home-section--content\">\n\n      <div class=\"promo-grid--inner\">\n        \n\n        \n\n          \n\n          \n\n          \n          \n          \n          \n\n          \n          \n<div class=\"promo-block-grid      promo-block-grid--index-1      promo-block-grid--1589938713035--1            promo-grid--half-width            desktop-block      \" data-rimg=\"loaded\" data-rimg-scale=\"2\" data-rimg-template=\"//49thcoffee.com/cdn/shop/files/Main_S1_{size}.png?v=1622570475\" data-rimg-max=\"1500x750\" data-rimg-crop=\"\" style=\"background-image: url(&quot;//49thcoffee.com/cdn/shop/files/Main_S1_1500x750.png?v=1622570475&quot;);\">\n            \n              \n\n  \n    <noscript data-rimg-noscript=\"\">\n      <img\n        \n          src=\"//49thcoffee.com/cdn/shop/files/Main_S1_1350x675.png?v=1622570475\"\n        \n\n        alt=\"49th Parallel Coffee Roasters - Direct trade Specialty Coffee  - Main St Cafe\"\n        data-rimg=\"noscript\"\n        srcset=\"//49thcoffee.com/cdn/shop/files/Main_S1_1350x675.png?v=1622570475 1x, //49thcoffee.com/cdn/shop/files/Main_S1_1499x749.png?v=1622570475 1.11x\"\n        class=\"promo-block-grid--background\"\n        \n        \n      >\n    </noscript>\n  \n\n  <img src=\"//49thcoffee.com/cdn/shop/files/Main_S1_1350x675.png?v=1622570475\" alt=\"49th Parallel Coffee Roasters - Direct trade Specialty Coffee  - Main St Cafe\" data-rimg=\"loaded\" data-rimg-scale=\"2\" data-rimg-template=\"//49thcoffee.com/cdn/shop/files/Main_S1_{size}.png?v=1622570475\" data-rimg-max=\"1500x750\" data-rimg-crop=\"\" srcset=\"//49thcoffee.com/cdn/shop/files/Main_S1_1500x750.png?v=1622570475 1.00x\" class=\"promo-block-grid--background\" data-rimg-template-svg=\"data:image/svg+xml;utf8,&lt;svg%20xmlns='http://www.w3.org/2000/svg'%20width='1350'%20height='675'&gt;&lt;/svg&gt;\">\n\n\n\n  <div data-rimg-canvas=\"\"></div>\n\n\n            \n\n              <div class=\"promo-block-grid--content       promo-block-grid--content-align-top-left       promo-grid--maintain-aspect-ratio              promo-block-grid--unlinked       \" data-promo-block-grid-content=\"\">\n            \n\n            <div class=\"promo-block-grid--content-wrapper\">\n              \n              \n\n              \n\n              \n            </div>\n\n            \n\n            \n              </div>\n            \n          </div>\n\n\n\n\n\n          \n\n          \n\n          \n          \n          \n          \n\n          \n          \n<div class=\"promo-block-grid      promo-block-grid--index-1      promo-block-grid--1589938713035--2            promo-grid--half-width      promo-block--right      desktop-block      \" data-rimg=\"loaded\" data-rimg-scale=\"2\" data-rimg-template=\"//49thcoffee.com/cdn/shop/files/Main_S2_{size}.png?v=1622570511\" data-rimg-max=\"1500x750\" data-rimg-crop=\"\" style=\"background-image: url(&quot;//49thcoffee.com/cdn/shop/files/Main_S2_1500x750.png?v=1622570511&quot;);\">\n            \n              \n\n  \n    <noscript data-rimg-noscript=\"\">\n      <img\n        \n          src=\"//49thcoffee.com/cdn/shop/files/Main_S2_1350x675.png?v=1622570511\"\n        \n\n        alt=\"49th Parallel Coffee Roasters - Direct trade Specialty Coffee \"\n        data-rimg=\"noscript\"\n        srcset=\"//49thcoffee.com/cdn/shop/files/Main_S2_1350x675.png?v=1622570511 1x, //49thcoffee.com/cdn/shop/files/Main_S2_1499x749.png?v=1622570511 1.11x\"\n        class=\"promo-block-grid--background\"\n        \n        \n      >\n    </noscript>\n  \n\n  <img src=\"//49thcoffee.com/cdn/shop/files/Main_S2_1350x675.png?v=1622570511\" alt=\"49th Parallel Coffee Roasters - Direct trade Specialty Coffee \" data-rimg=\"loaded\" data-rimg-scale=\"2\" data-rimg-template=\"//49thcoffee.com/cdn/shop/files/Main_S2_{size}.png?v=1622570511\" data-rimg-max=\"1500x750\" data-rimg-crop=\"\" srcset=\"//49thcoffee.com/cdn/shop/files/Main_S2_1500x750.png?v=1622570511 1.00x\" class=\"promo-block-grid--background\" data-rimg-template-svg=\"data:image/svg+xml;utf8,&lt;svg%20xmlns='http://www.w3.org/2000/svg'%20width='1350'%20height='675'&gt;&lt;/svg&gt;\">\n\n\n\n  <div data-rimg-canvas=\"\"></div>\n\n\n            \n\n              <div class=\"promo-block-grid--content       promo-block-grid--content-align-top-left       promo-grid--maintain-aspect-ratio              promo-block-grid--unlinked       \" data-promo-block-grid-content=\"\">\n            \n\n            <div class=\"promo-block-grid--content-wrapper\">\n              \n              \n\n              \n\n              \n            </div>\n\n            \n\n            \n              </div>\n            \n          </div>\n\n\n\n        \n        \n          \n\n\n\n\n\n\n\n<div class=\"promo-block-grid promo-block-grid--index-19 promo-block-grid--1589938713035  mobile-block\">\n  \n\n    <div class=\"promo-block-grid--content  promo-block-grid--content-align-top-left  promo-grid--maintain-aspect-ratio    promo-block-grid--unlinked  onboarding\" data-promo-block-grid-content=\"\">\n  \n\n  <div class=\"promo-block-grid--content-wrapper\">\n    \n    \n\n    \n\n    \n  </div>\n\n  \n\n  \n    </div>\n  \n</div>\n\n\n          \n\n\n\n\n\n\n\n<div class=\"promo-block-grid promo-block-grid--index-19 promo-block-grid--1589938713035  mobile-block\">\n  \n\n    <div class=\"promo-block-grid--content  promo-block-grid--content-align-top-left  promo-grid--maintain-aspect-ratio    promo-block-grid--unlinked  onboarding\" data-promo-block-grid-content=\"\">\n  \n\n  <div class=\"promo-block-grid--content-wrapper\">\n    \n    \n\n    \n\n    \n  </div>\n\n  \n\n  \n    </div>\n  \n</div>\n\n\n      </div>\n\n  </div>\n\n\n\n<style>\n  \n    .promo-block-grid--1589938713035--1 {\n      \n\n      \n    }\n\n    \n      .promo-block-grid--1589938713035--1.desktop-block .promo-block-grid--content {\n        height:380px;\n      }\n\n      @media screen and (max-width: 723px){\n        .promo-block-grid--1589938713035--1.desktop-block .promo-block-grid--content {\n          height:270px;\n        } \n      }\n\n      \n    \n\n    \n\n\n    .promo-block-grid--1589938713035--1 .button-signpost {\n      color:#272223;\n    }\n\n    .promo-block-grid--1589938713035--1 .promo-block-grid--preheading {\n      color:#272223;\n    }\n\n    .promo-block-grid--1589938713035--1 .promo-block-grid--header {\n      color:#272223;\n    }\n\n    .promo-block-grid--1589938713035--1 .promo-block-grid--text {\n      color:#272223;\n    }\n\n    .promo-block-grid--1589938713035--2 {\n      \n\n      \n    }\n\n    \n      .promo-block-grid--1589938713035--2.desktop-block .promo-block-grid--content {\n        height:380px;\n      }\n\n      @media screen and (max-width: 723px){\n        .promo-block-grid--1589938713035--2.desktop-block .promo-block-grid--content {\n          height:270px;\n        } \n      }\n\n      \n    \n\n    \n\n\n    .promo-block-grid--1589938713035--2 .button-signpost {\n      color:#272223;\n    }\n\n    .promo-block-grid--1589938713035--2 .promo-block-grid--preheading {\n      color:#272223;\n    }\n\n    .promo-block-grid--1589938713035--2 .promo-block-grid--header {\n      color:#272223;\n    }\n\n    .promo-block-grid--1589938713035--2 .promo-block-grid--text {\n      color:#272223;\n    }\n  \n  \n</style>\n\n</section>",
+      "context_truncated": false,
+      "nearby_text": "",
+      "inside_control": false,
+      "control_type": null,
+      "control_text": "",
+      "control_aria_label": null,
+      "control_labelledby_text": "",
+      "control_other_image_alt": "",
+      "image_aria_label": null,
+      "image_labelledby_text": "",
+      "aria_hidden": false,
+      "role": null,
+      "visible": false,
+      "loaded": true,
+      "rendered_width": 1,
+      "rendered_height": 1,
+      "capture_method": "rendered_element",
+      "capture_status": "not_visible",
+      "capture_error": "The image is hidden or has no rendered dimensions.",
+      "rule_result": "needs_review",
+      "rule_reason": "Requires further evaluation.",
+      "rule_flags": [],
+      "decision": "not_visible",
+      "source": "capture"
+    },
+    {
+      "image_key": "image_005",
+      "page": "https://49thcoffee.com/pages/main-st",
+      "scan_id": "0b4ff4ad807a4908ac79c13423e757ec",
+      "image_id": null,
+      "src": "https://d3k81ch9hvuctc.cloudfront.net/company/UzESXs/images/3be87874-623f-4b6a-9c9b-5216b484f3ea.png",
+      "alt": "49th Parallel Coffee Roasters logo",
+      "image_html": "<img src=\"https://d3k81ch9hvuctc.cloudfront.net/company/UzESXs/images/3be87874-623f-4b6a-9c9b-5216b484f3ea.png\" width=\"2084\" height=\"1319\" tabindex=\"-1\" alt=\"49th Parallel Coffee Roasters logo\" class=\"needsclick go2816211594 go1466145428 kl-private-reset-css-Xuajs1\">",
+      "context_html": "<div class=\"needsclick go3020149389 klaviyo-form-image kl-private-reset-css-Xuajs1\"><img src=\"https://d3k81ch9hvuctc.cloudfront.net/company/UzESXs/images/3be87874-623f-4b6a-9c9b-5216b484f3ea.png\" width=\"2084\" height=\"1319\" tabindex=\"-1\" alt=\"49th Parallel Coffee Roasters logo\" class=\"needsclick go2816211594 go1466145428 kl-private-reset-css-Xuajs1\"></div>",
+      "context_truncated": false,
+      "nearby_text": "",
+      "inside_control": false,
+      "control_type": null,
+      "control_text": "",
+      "control_aria_label": null,
+      "control_labelledby_text": "",
+      "control_other_image_alt": "",
+      "image_aria_label": null,
+      "image_labelledby_text": "",
+      "aria_hidden": false,
+      "role": null,
+      "visible": true,
+      "loaded": true,
+      "rendered_width": 164,
+      "rendered_height": 103.796875,
+      "capture_method": "rendered_element",
+      "capture_status": "captured",
+      "rule_result": "needs_review",
+      "rule_reason": "Requires further evaluation.",
+      "rule_flags": [],
+      "decision": "pass",
+      "source": "AI",
+      "ai_result": {
+        "page": "https://49thcoffee.com/pages/main-st",
+        "model": "gpt-6.2-sol",
+        "usage": {
+          "input_tokens": 579,
+          "input_tokens_details": {
+            "cache_write_tokens": 0,
+            "cached_tokens": 0,
+            "cache_write_tokens_details": {
+              "ttl_12h_tokens": 0,
+              "ttl_30m_tokens": 0
+            }
+          },
+          "output_tokens": 93,
+          "output_tokens_details": {
+            "reasoning_tokens": 0
+          },
+          "total_tokens": 672
+        },
+        "decision": "pass",
+        "reason": "The alt text accurately identifies the logo and conveys the full brand name. The colours are not needed to understand the image in this context.",
+        "evidence": [
+          "The image reads “49th Parallel Coffee Roasters,” matching the alt text.",
+          "The image is not hidden from assistive technology and is not inside a control."
+        ]
+      }
+    },
+    {
+      "image_key": "image_006",
+      "page": "https://49thcoffee.com/pages/main-st",
+      "scan_id": "0b4ff4ad807a4908ac79c13423e757ec",
+      "image_id": null,
+      "src": "https://cdn.klaviyomail.com/company/UzESXs/images/c6631be8-585d-40cf-a371-185e2ad64e31.gif",
+      "alt": "Summer picnic with iced coffee drinks",
+      "image_html": "<img src=\"https://cdn.klaviyomail.com/company/UzESXs/images/c6631be8-585d-40cf-a371-185e2ad64e31.gif\" alt=\"Summer picnic with iced coffee drinks\" class=\"needsclick  kl-private-reset-css-Xuajs1\" style=\"width: 100%; height: 100%; object-fit: cover; object-position: center center;\">",
+      "context_html": "<div class=\"needsclick  kl-private-reset-css-Xuajs1\" style=\"width: 100%; height: 100%; position: relative;\"><img src=\"https://cdn.klaviyomail.com/company/UzESXs/images/c6631be8-585d-40cf-a371-185e2ad64e31.gif\" alt=\"Summer picnic with iced coffee drinks\" class=\"needsclick  kl-private-reset-css-Xuajs1\" style=\"width: 100%; height: 100%; object-fit: cover; object-position: center center;\"></div>",
+      "context_truncated": false,
+      "nearby_text": "",
+      "inside_control": false,
+      "control_type": null,
+      "control_text": "",
+      "control_aria_label": null,
+      "control_labelledby_text": "",
+      "control_other_image_alt": "",
+      "image_aria_label": null,
+      "image_labelledby_text": "",
+      "aria_hidden": false,
+      "role": null,
+      "visible": true,
+      "loaded": true,
+      "rendered_width": 333.328125,
+      "rendered_height": 640,
+      "capture_method": "rendered_element",
+      "capture_status": "captured",
+      "rule_result": "needs_review",
+      "rule_reason": "Requires further evaluation.",
+      "rule_flags": [],
+      "decision": "issue",
+      "source": "AI",
+      "ai_result": {
+        "page": "https://49thcoffee.com/pages/main-st",
+        "model": "gpt-6.2-sol",
+        "usage": {
+          "input_tokens": 802,
+          "input_tokens_details": {
+            "cache_write_tokens": 0,
+            "cached_tokens": 0,
+            "cache_write_tokens_details": {
+              "ttl_12h_tokens": 0,
+              "ttl_30m_tokens": 0
+            }
+          },
+          "output_tokens": 118,
+          "output_tokens_details": {
+            "reasoning_tokens": 0
+          },
+          "total_tokens": 920
+        },
+        "decision": "issue",
+        "reason": "The alt text describes a summer picnic with iced drinks, but the image shows a holiday-themed coffee product display. No nearby text supplies that information.",
+        "evidence": [
+          "A turquoise 49th Parallel coffee bag labeled “Winter Solstice” is prominently displayed.",
+          "Red ornaments and a gold paper crane surround a glass pour-over carafe and a cup of coffee on a saucer.",
+          "No picnic setting or visible ice supports the current description."
+        ]
+      }
+    }
+  ],
+  "created_at": "2026-11-24T18:37:01.336757+00:00",
+  "status": "captured",
+  "human_reviews": {
+    "image_001": {
+      "decision": "pass",
+      "notes": "",
+      "assessment_id": "assessment_image_001"
+    },
+    "image_005": {
+      "decision": "pass",
+      "notes": "",
+      "assessment_id": "assessment_image_005"
+    },
+    "image_006": {
+      "decision": "issue",
+      "notes": "",
+      "assessment_id": "assessment_image_006"
+    }
+  },
+  "export_note": "Publication copy: local capture paths, API response IDs, and cache fingerprints omitted. Human decisions were made after viewing AI assessments."
+}
