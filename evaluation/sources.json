@@ -1,0 +1,21 @@
+{
+  "target_images": 50,
+  "images_per_site": 5,
+  "scan_limit": 12,
+  "selection": "In listed source order, take the first eligible unique image elements in DOM order, up to five per final page hostname. Stop at 50. Eligibility requires a successful capture, rendered visibility in browser mode, and image dimensions of at least 40 by 40 pixels. Exact duplicate image bytes are excluded. Record all failures and exclusions. Do not select by model output or expected issue status.",
+  "excluded_prior_example": "https://49thcoffee.com/pages/main-st",
+  "sources": [
+    {"url": "https://www.breka.ca/", "category": "cafe"},
+    {"url": "https://jjbeancoffee.com/", "category": "cafe"},
+    {"url": "https://www.scienceworld.ca/", "category": "museum"},
+    {"url": "https://www.vanartgallery.bc.ca/", "category": "museum"},
+    {"url": "https://www.vpl.ca/", "category": "library"},
+    {"url": "https://vancouver.ca/", "category": "government"},
+    {"url": "https://www.ubc.ca/", "category": "university"},
+    {"url": "https://www.capilanou.ca/", "category": "university"},
+    {"url": "https://www.tentree.com/", "category": "retail"},
+    {"url": "https://www.vanaqua.org/", "category": "aquarium"},
+    {"url": "https://www.destinationvancouver.com/", "category": "tourism"},
+    {"url": "https://granvilleisland.com/", "category": "tourism"}
+  ]
+}

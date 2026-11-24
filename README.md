@@ -6,7 +6,7 @@ A nonempty alt attribute can still describe the wrong image. This project combin
 
 ![A public webpage image flagged for a misleading text alternative](docs/screenshots/website-finding.png)
 
-[Public webpage case study](docs/website-case-study.md) · [Evaluation notes](docs/evaluation.md) · [Third-party assets](THIRD_PARTY.md)
+[Evaluation workflow](evaluation/protocol.md) · [Public webpage case study](docs/website-case-study.md) · [Evaluation notes](docs/evaluation.md) · [Third-party assets](THIRD_PARTY.md)
 
 ## Features
 
@@ -71,6 +71,18 @@ A finding applies to the inspected image and its containing control. Full WCAG c
 
 Public websites may restrict automated browsers or image downloads. Their failures are surfaced in the app. Run the app locally.
 
+## Fresh public-image evaluation
+
+The original system is preserved on the `baseline-v1` branch. A separate evaluation workflow collects a fixed convenience sample, records integrity hashes, and presents a reference-labeling screen without automated decisions. It compares rules-only, AI-only, and hybrid judgments on the same captured images, reporting abstentions and coverage alongside precision and recall.
+
+```bash
+python web_evaluation.py freeze
+python web_evaluation.py collect
+python -m streamlit run label_web_images.py --server.address 127.0.0.1
+```
+
+The target is 50 images with at most five per page hostname; blocked pages and collection shortfalls are recorded. Reference labels must be completed and sealed before scoring. Prediction is a separate paid step. The workflow records whether labels were sealed before predictions and whether the reviewer saw automated results. It does not assume an external reviewer is an expert or independent merely because a reviewer ID exists. No new accuracy score is claimed until the experiment is actually run. See the [protocol and remaining commands](evaluation/protocol.md).
+
 ## Existing synthetic benchmark
 
 The original project includes 30 synthetic pages with 50 image elements, across 15 matched scenario pairs. Each page has one labeled target image, marked `id="target"`. Development contains 24 cases and holdout contains six cases across three separate groups. Repeated assets and related layout patterns occur across the splits.
@@ -124,7 +136,7 @@ The application creates `human_reviews.db` locally. Personal review databases ar
 python -m unittest discover -s tests -v
 ```
 
-The 17 automated tests cover source URL resolution, missing versus empty alt, label references, image-name evidence, transparency, context truncation, cache invalidation, partial API failures, reviewer persistence, and the Streamlit scan/review interactions. AI tests use a fake client to verify payloads, successful caching, and failure handling without API charges.
+The automated tests cover source URL resolution, missing versus empty alt, label references, image-name evidence, transparency, context truncation, cache invalidation, partial API failures, reviewer persistence, and the Streamlit scan/review interactions. AI tests use a fake client to verify payloads, successful caching, and failure handling without API charges.
 
 A live HTML scan was exercised against W3C's informative-images tutorial. A browser-mode scan and three real OpenAI assessments were subsequently completed on macOS against a public coffee-shop page; the exported observations and reviews are documented in the [case study](docs/website-case-study.md). The automated suite covers request construction and failure handling with a fake client, so running tests does not consume API credit.
 
