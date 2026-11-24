@@ -10,3 +10,5 @@ runs/
 *.zip
 .DS_Store
 evaluation/local/
+
+evaluation/external-local/

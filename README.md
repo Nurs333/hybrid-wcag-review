@@ -6,7 +6,7 @@ A nonempty alt attribute can still describe the wrong image. This project combin
 
 ![A public webpage image flagged for a misleading text alternative](docs/screenshots/website-finding.png)
 
-[Evaluation workflow](evaluation/protocol.md) · [Public webpage case study](docs/website-case-study.md) · [Evaluation notes](docs/evaluation.md) · [Third-party assets](THIRD_PARTY.md)
+[External benchmarks](evaluation/external-benchmarks.md) · [Evaluation workflow](evaluation/protocol.md) · [Public webpage case study](docs/website-case-study.md) · [Evaluation notes](docs/evaluation.md) · [Third-party assets](THIRD_PARTY.md)
 
 ## Features
 
@@ -71,7 +71,18 @@ A finding applies to the inspected image and its containing control. Full WCAG c
 
 Public websites may restrict automated browsers or image downloads. Their failures are surfaced in the app. Run the app locally.
 
-## Fresh public-image evaluation
+## External labeled benchmarks
+
+Existing references can evaluate the prototype without new manual labels. The importer supports a restricted W3C ACT image-case subset and the accessible static-image subset of an ASSETS 2026 human-rating dataset. Model inputs and reference files are separate; source outcome titles and existing teacher answers are excluded.
+
+```bash
+python external_benchmarks.py prepare
+python external_benchmarks.py score
+```
+
+The recorded import contains 11 W3C cases and 38 ASSETS images. The ASSETS subset has no passing references under the documented rating proxy, so it cannot establish a false-positive rate. The frozen rules baseline and all exclusions are recorded; paid AI evaluation is a separate step and is not claimed as completed. See [sources, limitations, results, and AI commands](evaluation/external-benchmarks.md).
+
+## Optional fresh public-image evaluation
 
 The original system is preserved on the `baseline-v1` branch. A separate evaluation workflow collects a fixed convenience sample, records integrity hashes, and presents a reference-labeling screen without automated decisions. It compares rules-only, AI-only, and hybrid judgments on the same captured images, reporting abstentions and coverage alongside precision and recall.
 

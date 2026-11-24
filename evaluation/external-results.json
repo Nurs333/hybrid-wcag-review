@@ -1,0 +1,141 @@
+{
+  "status": "Rules baseline completed; AI and hybrid model evaluation not run in this snapshot.",
+  "generated_at_utc": "2026-11-24T19:15:26.675981+00:00",
+  "benchmarks": {
+    "act": {
+      "inputs_sha256": "54742bec373f8c077a0e244fd5b67a69f1434b9c2bb59227dd1ee49858334655",
+      "references_sha256": "f5fc85cc67c77642d8eb27b36336629d88381d783440e1019ae0ddfdc17900b4",
+      "prepared_cases": 11,
+      "reference_counts": {
+        "pass": 6,
+        "issue": 5
+      },
+      "rules": {
+        "labeled": 11,
+        "decided": 3,
+        "abstained": 8,
+        "abstained_issue": 3,
+        "abstained_pass": 5,
+        "reference_uncertain": 0,
+        "tp": 2,
+        "fp": 1,
+        "fn": 0,
+        "tn": 0,
+        "precision": 0.6666666666666666,
+        "recall": 0.4,
+        "coverage": 0.2727272727272727,
+        "selective_accuracy": 0.6666666666666666,
+        "correct_fraction_all_labeled": 0.18181818181818182
+      },
+      "rules_by_act_rule": {
+        "23a2a8": {
+          "cases": 9,
+          "rules": {
+            "labeled": 9,
+            "decided": 3,
+            "abstained": 6,
+            "abstained_issue": 2,
+            "abstained_pass": 4,
+            "reference_uncertain": 0,
+            "tp": 2,
+            "fp": 1,
+            "fn": 0,
+            "tn": 0,
+            "precision": 0.6666666666666666,
+            "recall": 0.5,
+            "coverage": 0.3333333333333333,
+            "selective_accuracy": 0.6666666666666666,
+            "correct_fraction_all_labeled": 0.2222222222222222
+          }
+        },
+        "qt1vmo": {
+          "cases": 2,
+          "rules": {
+            "labeled": 2,
+            "decided": 0,
+            "abstained": 2,
+            "abstained_issue": 1,
+            "abstained_pass": 1,
+            "reference_uncertain": 0,
+            "tp": 0,
+            "fp": 0,
+            "fn": 0,
+            "tn": 0,
+            "precision": null,
+            "recall": 0.0,
+            "coverage": 0.0,
+            "selective_accuracy": null,
+            "correct_fraction_all_labeled": 0.0
+          }
+        }
+      },
+      "ai_status": "not_run",
+      "ai": null,
+      "hybrid": null,
+      "source": "https://www.w3.org/WAI/content-assets/wcag-act-rules/testcases.json",
+      "source_sha256": "49051da603afa6d28b94ef3e758146dafcbe72bade7202a24636bab3ea4c0036",
+      "exclusion_counts": {
+        "unsupported_markup_or_target_count": 5,
+        "no_source_image": 1,
+        "inapplicable": 15,
+        "styles_or_scripts_require_rendering": 2
+      },
+      "label_scope": "Agreement with individual ACT rule references on a restricted source-HTML img subset, not page-level WCAG accuracy. The baseline flags semantic alternatives more broadly than a non-empty-name rule; disagreements require rule-scope interpretation.",
+      "false_alarm_cases": [
+        {
+          "case_id": "act_40d83620b0bcbcf0e7380177384f48596823e7a9",
+          "rule_id": "23a2a8",
+          "reference": "pass",
+          "rules": "issue",
+          "rule_flags": [
+            "Image has no alt attribute."
+          ]
+        }
+      ]
+    },
+    "assets": {
+      "inputs_sha256": "c06016df23822e3c9980f05f3b2ac6de2553a644a7b12eaa7e6cc7e98eccf7a9",
+      "references_sha256": "441d7af22cec722907c4a0aec8bfc3cb7ad6f5878321976771634c0f9296da1b",
+      "prepared_cases": 38,
+      "reference_counts": {
+        "issue": 36,
+        "uncertain": 2
+      },
+      "rules": {
+        "labeled": 36,
+        "decided": 0,
+        "abstained": 36,
+        "abstained_issue": 36,
+        "abstained_pass": 0,
+        "reference_uncertain": 2,
+        "tp": 0,
+        "fp": 0,
+        "fn": 0,
+        "tn": 0,
+        "precision": null,
+        "recall": 0.0,
+        "coverage": 0.0,
+        "selective_accuracy": null,
+        "correct_fraction_all_labeled": 0.0
+      },
+      "rules_by_act_rule": {},
+      "ai_status": "not_run",
+      "ai": null,
+      "hybrid": null,
+      "source": "https://zenodo.org/records/21359354",
+      "source_sha256": "b6da74fdaf3a623c92ac74e2d706cdd329c58fa88acb981977c3859c06943280",
+      "exclusion_counts": {
+        "relative_image_path_not_recoverable_from_release": 166,
+        "animated_image_requires_temporal_review": 1
+      },
+      "label_scope": "Human quality-rating proxy: 1-2 issue, 3 uncertain, 4-5 pass; a category must have a strict majority across distinct reviewers, otherwise uncertain. This mapping is an operational choice, not a published WCAG pass/fail verdict. Historical DOM context is incomplete; no original pages are reconstructed from filenames.",
+      "source_rows": 645,
+      "unique_image_urls": 205,
+      "absolute_image_groups": 39,
+      "source_page_counts": {
+        "WIRED_science_user_test.html": 38
+      },
+      "rating_provenance": "Only user_assessment of the original alt is used. Teacher/model ratings and generated alternatives are excluded. Original study blinding and reviewer expertise are not established by this importer."
+    }
+  }
+}
