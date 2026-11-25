@@ -63,7 +63,13 @@ def evidence_panel(task, result):
                 st.write("• " + flag)
         if task.get("ai_result"):
             model_result = task["ai_result"]
-            st.write("**Model decision**", LABELS.get(model_result["decision"], model_result["decision"]))
+            raw_decision = model_result.get("model_decision", model_result["decision"])
+            st.write("**Model decision**", LABELS.get(raw_decision, raw_decision))
+            for issue in model_result.get("validation_issues", []):
+                st.warning(issue)
+            if model_result.get("supporting_text"):
+                st.write("**Quoted text supporting the assessment**")
+                st.text(model_result["supporting_text"])
             st.caption(f'Model: {model_result.get("model", "unknown")} · Provider: {model_result.get("provider", "openai")}')
             if model_result.get("provider") == "local":
                 st.caption(f'Device: {model_result.get("device", "unknown")} · Time: {model_result.get("elapsed_seconds", 0):.1f}s')
@@ -166,7 +172,7 @@ def show_scan_results(run):
             "Alt": "Missing" if record.get("alt") is None else record["alt"] or "(empty)",
             "Assessment": LABELS[record["decision"]],
             "Source": record["source"],
-            "Model decision": ai_result.get("decision", "Pending"),
+            "Model decision": ai_result.get("model_decision", ai_result.get("decision", "Pending")),
             "Disagreement": bool(record.get("disagreement")),
             "Human decision": current_review["decision"] if current_review else "Pending",
         })

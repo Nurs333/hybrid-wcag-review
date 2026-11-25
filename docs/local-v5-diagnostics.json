@@ -1,0 +1,234 @@
+{
+  "scope": "Developer diagnostic on three selected images from a reported all-pass scan. Saved HTML facts are paired with newly fetched public source images, not the original browser screenshots. These examples were used while debugging; no independent accuracy or generalization estimate is claimed.",
+  "model": "Qwen/Qwen3-VL-2B-Instruct",
+  "revision": "89644892e4d85e24eaac8bacfd4f463576704203",
+  "prompt_version": "local-json-v5",
+  "validation_policy": "quoted-evidence-v2",
+  "python": "3.12.14",
+  "runtime": {
+    "torch": "2.8.0+cpu",
+    "torchvision": "0.23.0+cpu",
+    "transformers": "4.57.6",
+    "lm-format-enforcer": "0.11.3"
+  },
+  "device": "cpu",
+  "model_loading_offline": true,
+  "openai_requests": 0,
+  "module_sha256": {
+    "local_model.py": "45196bd8cc34c677354613dc4abe74f417cfd8a9b9f344f47f61057c9e0e311c",
+    "local_evidence.py": "1f72dca6159fca4225997da6bf98d4e193a51870f73decbece985fb61493012b"
+  },
+  "software_tests_passed": 62,
+  "checks": [
+    {
+      "image_key": "image_007",
+      "source_image_sha256": "11d5e6005958f7769d15b32a6e62aa0df991305b4def4fdfc47302f2e8b91caf",
+      "context": {
+        "alt": "",
+        "alt_state": "empty",
+        "image_names": {
+          "aria_label": "",
+          "labelledby_text": "",
+          "title": ""
+        },
+        "inside_control": false,
+        "control_type": null,
+        "control_names": {
+          "aria_label": "",
+          "labelledby_text": "",
+          "text_inside_control": "",
+          "other_image_alt": "",
+          "title": ""
+        },
+        "nearby_text_outside_name": "",
+        "role": null,
+        "aria_hidden": false,
+        "image_html": "<img alt=\"\"/>",
+        "context_html": "<figure> <div> <div> <img alt=\"\"/> </div> </div> </figure>",
+        "context_truncated": false
+      },
+      "result": {
+        "page": "https://www.breka.ca/#trending",
+        "provider": "local",
+        "model": "Qwen/Qwen3-VL-2B-Instruct",
+        "model_revision": "89644892e4d85e24eaac8bacfd4f463576704203",
+        "prompt_version": "local-json-v5",
+        "validation_policy": "quoted-evidence-v2",
+        "response_id": "local_1fa0765c9e0c746d4355b868",
+        "assessment_key": "1fa0765c9e0c746d4355b868d50e9be8d6fd5f50c6fbd3b720e235bef2e96b0d",
+        "device": "cpu",
+        "elapsed_seconds": 69.61054918500008,
+        "processed_pixels": 258048,
+        "image_grid_thw": [
+          1,
+          24,
+          42
+        ],
+        "usage": {
+          "input_tokens": 695,
+          "output_tokens": 128
+        },
+        "raw_response": "{\n  \"decision\": \"pass\",\n  \"reason\": \"The image is a timeline with a clear visual representation of events and dates, and the alt attribute is empty, which is acceptable as it is not a functional image with a description or title that is \"\n  ,\n  \"evidence\": [\n    \"The image is a timeline with labeled points and dates, but the alt attribute is empty, which is consistent with the context of a visual aid\",\n    \"The timeline shows a progression of locations and years, but the alt attribute is not providing any descriptive text\"\n  ],\n  \"supporting_text\": \"\"\n}",
+        "parse_error": null,
+        "time_limit_reached": false,
+        "context_truncated": false,
+        "decision": "uncertain",
+        "reason": "Pass requires review: The pass has no exact quotation from a meaningful alternative, control name, or equivalent nearby text. Decoration cannot be established from appearance alone.",
+        "evidence": [
+          "The image is a timeline with labeled points and dates, but the alt attribute is empty, which is consistent with the context of a visual aid",
+          "The timeline shows a progression of locations and years, but the alt attribute is not providing any descriptive text"
+        ],
+        "supporting_text": "",
+        "model_decision": "pass",
+        "model_reason": "The image is a timeline with a clear visual representation of events and dates, and the alt attribute is empty, which is acceptable as it is not a functional image with a description or title that is ",
+        "validation_issues": [
+          "The pass has no exact quotation from a meaningful alternative, control name, or equivalent nearby text. Decoration cannot be established from appearance alone."
+        ]
+      },
+      "supporting_text_choices": [
+        ""
+      ],
+      "source_image_url": "https://images.squarespace-cdn.com/content/v1/54f8c792e4b03ea829c79558/e5d8a840-52f0-4310-b9f6-d72a4c1a01b8/3750+WEST+4TH+AVE.+-+2024-06-16T103815.586.png?format=1000w"
+    },
+    {
+      "image_key": "image_009",
+      "source_image_sha256": "cea753d22c40744b5c9cb98bf0a7f8931a0c285949ee2cbdf9abc8d26aabc78a",
+      "context": {
+        "alt": "",
+        "alt_state": "empty",
+        "image_names": {
+          "aria_label": "",
+          "labelledby_text": "",
+          "title": ""
+        },
+        "inside_control": true,
+        "control_type": "a",
+        "control_names": {
+          "aria_label": "",
+          "labelledby_text": "",
+          "text_inside_control": "",
+          "other_image_alt": "",
+          "title": ""
+        },
+        "nearby_text_outside_name": "CAKE \nSLICES",
+        "role": null,
+        "aria_hidden": false,
+        "image_html": "<img alt=\"\"/>",
+        "context_html": "<figure> <div> <div> <a href=\"/featured/cake-slices\"> <div> <img alt=\"\"/> <div></div> </div> </a> </div> </div> <figcaption> <div> <div> <div><p>CAKE <br/>SLICES</p></div> </div> <div> <div></div> </div> </div> </figcaption> </figure>",
+        "context_truncated": false
+      },
+      "result": {
+        "page": "https://www.breka.ca/#trending",
+        "provider": "local",
+        "model": "Qwen/Qwen3-VL-2B-Instruct",
+        "model_revision": "89644892e4d85e24eaac8bacfd4f463576704203",
+        "prompt_version": "local-json-v5",
+        "validation_policy": "quoted-evidence-v2",
+        "response_id": "local_d58be2474577ce046c9da0b4",
+        "assessment_key": "d58be2474577ce046c9da0b470a78ffb4797c15ab5d884ee48a0a1e2e4bdd624",
+        "device": "cpu",
+        "elapsed_seconds": 51.95671792799999,
+        "processed_pixels": 71680,
+        "image_grid_thw": [
+          1,
+          14,
+          20
+        ],
+        "usage": {
+          "input_tokens": 591,
+          "output_tokens": 123
+        },
+        "raw_response": "{\n  \"decision\": \"issue\",\n  \"reason\": \"The image is a close-up of a small, layered dessert with a strawberry on top, but the alt attribute is empty, which means no description is provided for the image. This is a critical issue as the alt=\",\"supporting_text\"            :\"\",\n  \"evidence\": [\n    \"The image shows a pastry with a strawberry on top, but the alt attribute is empty\",\n    \"The alt attribute is not providing any descriptive information about the image\"\n  ] \n}",
+        "parse_error": null,
+        "time_limit_reached": false,
+        "context_truncated": false,
+        "decision": "issue",
+        "reason": "The image is a close-up of a small, layered dessert with a strawberry on top, but the alt attribute is empty, which means no description is provided for the image. This is a critical issue as the alt=",
+        "evidence": [
+          "The image shows a pastry with a strawberry on top, but the alt attribute is empty",
+          "The alt attribute is not providing any descriptive information about the image"
+        ],
+        "supporting_text": "",
+        "model_decision": "issue",
+        "model_reason": "The image is a close-up of a small, layered dessert with a strawberry on top, but the alt attribute is empty, which means no description is provided for the image. This is a critical issue as the alt=",
+        "validation_issues": []
+      },
+      "supporting_text_choices": [
+        "",
+        "CAKE SLICES",
+        "CAKE",
+        "SLICES"
+      ],
+      "source_image_url": "https://images.squarespace-cdn.com/content/v1/54f8c792e4b03ea829c79558/6d6eafb8-16bd-46a2-a957-ab289ed98686/StrawberryShortcake.jpg?format=300w"
+    },
+    {
+      "image_key": "image_001",
+      "source_image_sha256": "11090565fd0136a335afcffe45f7bac85d256f4560532aeb65dc48e3740c4c7e",
+      "context": {
+        "alt": "Breka Bakery & Café",
+        "alt_state": "text",
+        "image_names": {
+          "aria_label": "",
+          "labelledby_text": "",
+          "title": ""
+        },
+        "inside_control": true,
+        "control_type": "a",
+        "control_names": {
+          "aria_label": "",
+          "labelledby_text": "",
+          "text_inside_control": "",
+          "other_image_alt": "",
+          "title": ""
+        },
+        "nearby_text_outside_name": "",
+        "role": null,
+        "aria_hidden": false,
+        "image_html": "<img alt=\"Breka Bakery &amp; Café\"/>",
+        "context_html": "<a href=\"/\" id=\"top\"> <img alt=\"Breka Bakery &amp; Café\"/> </a>",
+        "context_truncated": false
+      },
+      "result": {
+        "page": "https://www.breka.ca/#trending",
+        "provider": "local",
+        "model": "Qwen/Qwen3-VL-2B-Instruct",
+        "model_revision": "89644892e4d85e24eaac8bacfd4f463576704203",
+        "prompt_version": "local-json-v5",
+        "validation_policy": "quoted-evidence-v2",
+        "response_id": "local_a0eec1ccb2da78abdddfbf95",
+        "assessment_key": "a0eec1ccb2da78abdddfbf95dd0e305d8d7f4561f8d7ae84f378249b38a73bfb",
+        "device": "cpu",
+        "elapsed_seconds": 73.68427700799998,
+        "processed_pixels": 179200,
+        "image_grid_thw": [
+          1,
+          14,
+          50
+        ],
+        "usage": {
+          "input_tokens": 633,
+          "output_tokens": 127
+        },
+        "raw_response": "{\n  \"decision\": \"pass\",\n  \"reason\": \"The image is a logo with a clear, functional purpose and no misleading or missing information. The alt text accurately describes the image, and the visual content is consistent with the text provided.\",\n  \"evidence\": [\n    \"The alt attribute is 'Breka Bakery & Café', which matches the visible text in the image and is not empty or missing\",\n    \"The image is a functional link to the website, as indicated by the context and the presence of a title tag\"\n  ],\n  \"supporting_text\": \"Breka Bakery & Café\"\n}",
+        "parse_error": null,
+        "time_limit_reached": false,
+        "context_truncated": false,
+        "decision": "pass",
+        "reason": "The image is a logo with a clear, functional purpose and no misleading or missing information. The alt text accurately describes the image, and the visual content is consistent with the text provided.",
+        "evidence": [
+          "The alt attribute is 'Breka Bakery & Café', which matches the visible text in the image and is not empty or missing",
+          "The image is a functional link to the website, as indicated by the context and the presence of a title tag"
+        ],
+        "supporting_text": "Breka Bakery & Café",
+        "model_decision": "pass",
+        "model_reason": "The image is a logo with a clear, functional purpose and no misleading or missing information. The alt text accurately describes the image, and the visual content is consistent with the text provided.",
+        "validation_issues": []
+      },
+      "supporting_text_choices": [
+        "",
+        "Breka Bakery & Café"
+      ],
+      "source_image_url": "https://images.squarespace-cdn.com/content/v1/54f8c792e4b03ea829c79558/039c0e1b-9537-4c2b-8c26-58131c68b762/Breka+Logo_01.png?format=1500w"
+    }
+  ]
+}

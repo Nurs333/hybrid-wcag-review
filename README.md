@@ -14,6 +14,7 @@ A nonempty alt attribute can still describe the wrong image. This project combin
 - Inspect missing, empty, generic, and filename-like alternatives, plus image-based controls.
 - Compare captured images with their alternatives and nearby context locally with Qwen3-VL-2B, or explicitly choose the OpenAI API.
 - Keep provider-specific caches and surface rule/model disagreements without silently accepting a pass.
+- Validate local pass quotations against the exact alt, control-name evidence, and nearby text; retain unsupported passes as uncertain.
 - Review pass, issue, and uncertain assessments with supporting evidence.
 - Save reviews in SQLite and download JSON reports.
 - Reproduce results on 30 synthetic cases using saved predictions.
@@ -141,6 +142,7 @@ The extraction step refreshes image paths after moving the folder. Cached fixtur
 | `website_checker.py` | URL capture and frozen original API routing for baseline reproduction |
 | `review_pipeline.py` | Current review-all routing, provider caches, disagreement policy, and CLI |
 | `local_model.py` | Pinned local Qwen weights, bounded inputs, inference, and strict output validation |
+| `local_evidence.py` | Semantic context compaction, quoted support, and conservative pass validation |
 | `local_benchmark.py` | Local predictions and scoring against the external snapshots |
 | `image_rules.py` | Shared rule flags for fixture and URL inputs |
 | `ai_check.py` | OpenAI request, structured result, and cache fingerprints |
@@ -162,7 +164,7 @@ python -m unittest discover -s tests -v
 
 The automated tests cover source URL resolution, missing versus empty alt, label references, image-name evidence, transparency, context truncation, cache invalidation, partial API failures, reviewer persistence, and the Streamlit scan/review interactions. Model tests use fake inference to verify payloads, provider isolation, rule-flagged image routing, conflict handling, malformed output, retries, and persistence without API charges or model downloads. Real inference is a separate smoke or benchmark step.
 
-The current suite passes 46 tests. Separately, real offline CPU inference flagged a mismatched office description and accepted a matching one. A poster request hit the generation budget and remained uncertain. These sanity checks were used during development and are not a held-out accuracy claim. See [recorded local inputs and outputs](docs/local-smoke-results.json). Apple MPS and the full external local benchmark remain untested.
+The v5 suite passes 62 tests, including regressions for unsupported filename and empty-alt passes, sibling captions outside unnamed links, valid logo alternatives, and separate raw/validated metrics. In the earlier v4 run, real offline CPU inference flagged a mismatched office description and accepted a matching one. A poster request hit the generation budget and remained uncertain. These sanity checks were used during development and are not a held-out accuracy claim. See [recorded local inputs and outputs](docs/local-smoke-results.json). A supplied v4 scan confirms MPS execution but revealed unsupported passes. The [v5 audit](docs/local-pass-audit.md) documents the fixes and their limits. The full external v5 local benchmark has not been run.
 
 A live HTML scan was exercised against W3C's informative-images tutorial. A browser-mode scan and three real OpenAI assessments were subsequently completed on macOS against a public coffee-shop page; the exported observations and reviews are documented in the [case study](docs/website-case-study.md). The automated suite covers request construction and failure handling with a fake client, so running tests does not consume API credit.
 

@@ -55,7 +55,7 @@ def score(name):
     if predictions and (predictions["inputs_sha256"] != data["inputs_sha256"] or not set(predictions["records"]).issubset(ids)):
         raise ValueError("Local predictions do not match this input snapshot.")
     records = predictions["records"] if predictions else {}
-    pairs, combined_pairs, details, results = [], [], [], []
+    raw_pairs, pairs, combined_pairs, details, results = [], [], [], [], []
     for case in data["cases"]:
         case_id = case["case_id"]
         result = records.get(case_id, {}).get("result")
@@ -67,21 +67,26 @@ def score(name):
             results.append(result)
         # Missing or failed inference is unresolved even when rules flag a candidate.
         decision = result["decision"] if result else "uncertain"
+        raw_decision = result.get("model_decision", decision) if result else "uncertain"
         combined = rule["decision"] if result else "uncertain"
         expected = refs["references"][case_id]["decision"]
         pairs.append((expected, decision))
+        raw_pairs.append((expected, raw_decision))
         combined_pairs.append((expected, combined))
-        details.append({"case_id": case_id, "reference": expected, "local": decision if result else "not_run", "combined": combined, "disagreement": bool(rule.get("disagreement")), "parse_error": result.get("parse_error") if result else None})
+        details.append({"case_id": case_id, "reference": expected, "raw_model": raw_decision if result else "not_run", "local": decision if result else "not_run", "combined": combined, "disagreement": bool(rule.get("disagreement")), "validation_issues": result.get("validation_issues", []) if result else [], "parse_error": result.get("parse_error") if result else None})
     report = {
         "dataset": name, "inputs_sha256": data["inputs_sha256"], "references_sha256": refs["references_sha256"],
         "provider": "local", "model": local_model.MODEL_ID, "model_revision": local_model.MODEL_REVISION,
         "prompt_version": local_model.PROMPT_VERSION, "routing_policy": POLICY_VERSION,
+        "validation_policy": local_model.local_evidence.VERSION,
         "status": "complete" if len(results) == len(ids) else "partial" if records else "not_run",
         "prepared_cases": len(ids), "successful_inference": len(results),
         "parse_errors": sum(bool(result.get("parse_error")) for result in results),
         "runtime_errors": sum(bool(record.get("error")) for record in records.values()),
         "devices": dict(Counter(result["device"] for result in results)),
         "local_only": metrics(pairs) if records else None,
+        "raw_model": metrics(raw_pairs) if records else None,
+        "passes_requiring_review": sum(bool(result.get("validation_issues")) for result in results),
         "combined_review_all": metrics(combined_pairs) if records else None,
         "elapsed_seconds": sum(result["elapsed_seconds"] for result in results),
         "details": details,

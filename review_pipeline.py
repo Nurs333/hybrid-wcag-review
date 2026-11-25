@@ -37,13 +37,13 @@ def remember_result(record):
 
 def combine(record, result):
     flagged = record.get("rule_result") == "potential_issue"
-    disagreement = flagged and result["decision"] == "pass"
+    disagreement = flagged and result.get("model_decision", result["decision"]) == "pass"
     record.update(
         ai_result=result, decision="uncertain" if disagreement else result["decision"],
         source="Local model" if result.get("provider") == "local" else "OpenAI",
         disagreement=disagreement, needs_human_review=disagreement or result["decision"] == "uncertain",
         review_policy=POLICY_VERSION,
-        review_reason="Rules flagged a potential issue but the model returned pass. Human review is needed." if disagreement else result["reason"],
+        review_reason="Rules flagged a potential issue but the model returned pass. Human review is needed." if disagreement and not result.get("validation_issues") else result["reason"],
     )
 
 

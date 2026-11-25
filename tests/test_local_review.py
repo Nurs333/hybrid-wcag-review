@@ -71,7 +71,7 @@ class LocalReviewTests(unittest.TestCase):
             parsed, error = local_model.parse_output(raw)
             self.assertEqual(parsed["decision"], "uncertain")
             self.assertIsNotNone(error)
-        parsed, error = local_model.parse_output('```json\n{"decision":"issue","reason":"Wrong scene","evidence":["A dog is visible"]}\n```')
+        parsed, error = local_model.parse_output('```json\n{"decision":"issue","reason":"Wrong scene","evidence":["A dog is visible"],"supporting_text":""}\n```')
         self.assertEqual(parsed["decision"], "issue")
         self.assertIsNone(error)
 
@@ -137,8 +137,15 @@ class LocalReviewTests(unittest.TestCase):
         with patch.object(external_benchmarks, "LOCAL", self.folder), patch.object(external_benchmarks, "validate_inputs"):
             report = local_benchmark.score("act")
             self.assertEqual(report["local_only"]["tn"], 1)
+            self.assertEqual(report["raw_model"]["tn"], 1)
             self.assertEqual(report["combined_review_all"]["abstained_pass"], 1)
             self.assertEqual(report["combined_review_all"]["fp"], 0)
+            result.update(model_decision="pass", decision="uncertain", validation_issues=["No quoted support"])
+            (folder / "local_predictions.json").write_text(json.dumps(predictions))
+            guarded = local_benchmark.score("act")
+            self.assertEqual(guarded["raw_model"]["tn"], 1)
+            self.assertEqual(guarded["local_only"]["abstained_pass"], 1)
+            self.assertEqual(guarded["passes_requiring_review"], 1)
             predictions["records"]["sample"]["result"]["assessment_key"] = "stale"
             (folder / "local_predictions.json").write_text(json.dumps(predictions))
             with self.assertRaisesRegex(ValueError, "settings changed"):
