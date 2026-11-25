@@ -2,7 +2,7 @@
 
 A Python prototype for evaluating image alternatives and image-based controls on public webpages. It combines browser or HTML capture, explainable rule flags, vision-language model judgments, and saved human reviews.
 
-A nonempty alt attribute can still describe the wrong image. This project combines inexpensive structural checks with visual assessment and a reviewer interface. Rules flag straightforward candidates; captured images without rule flags go to the model. Reviewers can inspect the image and context, save a decision, and export the report.
+A nonempty alt attribute can still describe the wrong image. This project combines inexpensive structural checks with visual assessment and a reviewer interface. Rules flag structural candidates; every eligible visible captured image can then be checked by a local model or the explicitly selected OpenAI backend, including images with rule flags. A rule flag combined with a model pass becomes uncertain for human review. Reviewers can inspect the image and context, save a decision, and export the report.
 
 ![A public webpage image flagged for a misleading text alternative](docs/screenshots/website-finding.png)
 
@@ -12,23 +12,28 @@ A nonempty alt attribute can still describe the wrong image. This project combin
 
 - Scan a public webpage through Chromium or its initial HTML.
 - Inspect missing, empty, generic, and filename-like alternatives, plus image-based controls.
-- Compare captured images with their alternatives and nearby context through the OpenAI API.
+- Compare captured images with their alternatives and nearby context locally with Qwen3-VL-2B, or explicitly choose the OpenAI API.
+- Keep provider-specific caches and surface rule/model disagreements without silently accepting a pass.
 - Review pass, issue, and uncertain assessments with supporting evidence.
 - Save reviews in SQLite and download JSON reports.
 - Reproduce results on 30 synthetic cases using saved predictions.
 
 ## Run the application on macOS
 
-Open a terminal in this project folder.
+Open a terminal in this project folder. Use Python 3.12 for the tested optional local dependencies. If you already use Conda:
 
 ```bash
-python3 -m venv .venv
-source .venv/bin/activate
-python -m pip install -r requirements.txt
+conda create -n wcag-local python=3.12 -y
+conda activate wcag-local
+python -m pip install -r requirements-local.txt
 python -m playwright install chromium
+python local_model.py warmup
+python -m streamlit run review_app.py --server.address 127.0.0.1
 ```
 
-Set your OpenAI key in the same zsh terminal to enable the AI button.
+The app defaults to **Local model (no API charges)**. The first warmup downloads roughly 4–5 GB of pretrained model files from Hugging Face; later inference reuses the cache. Images and context are processed on this computer. No OpenAI key or automatic OpenAI fallback is used. Local inference uses RAM, time, and electricity and may be slower or less accurate than an API model. See [local setup, limits, and comparison commands](docs/local-model.md).
+
+For an API-only installation, install `requirements.txt` instead and choose **OpenAI API (paid)** in the app. Set your key in the same zsh terminal before starting Streamlit:
 
 ```bash
 read -s "OPENAI_API_KEY?Paste your OpenAI API key and press Enter: "
@@ -36,7 +41,7 @@ export OPENAI_API_KEY
 python -m streamlit run review_app.py --server.address 127.0.0.1
 ```
 
-Rule scans and saved development-case reviews also work with the API key unset. Live AI checks use OpenAI API credit. The app displays the number of images to send before the AI button is pressed.
+Rule scans and cached development reviews work without either inference backend. Live OpenAI checks consume API credit only when explicitly selected and run.
 
 ## Check a public webpage
 
@@ -44,20 +49,23 @@ Rule scans and saved development-case reviews also work with the API key unset. 
 2. Choose the image limit. The default is 12 image elements, configurable up to 100.
 3. Choose **Browser** to load JavaScript and scroll for lazy images, or **HTML** to inspect the initial markup and download its image sources.
 4. Click **Scan webpage**. The app captures images and page context, then runs the rules.
-5. Click **Run AI** to evaluate the remaining captured images using `gpt-6.2-sol`.
-6. Inspect individual findings. Human review offers `pass`, `issue`, and `uncertain`, with optional notes.
-7. Download the JSON report, which includes automated evidence and saved human reviews.
+5. Choose the assessment engine and click **Run local model** or **Run OpenAI**. Every eligible visible capture is included, even if its alt text looks normal or rules already flagged it. Hidden and failed captures are listed separately.
+6. Compare the model judgment with the rule flags. A rule flag/model pass disagreement remains uncertain.
+7. Inspect individual findings. Human review offers `pass`, `issue`, and `uncertain`, with optional notes.
+8. Download the JSON report, which includes automated evidence and saved human reviews.
 
 A public example for a first HTML-mode scan is https://www.w3.org/WAI/tutorials/images/informative/. Try three images initially. Browser mode requires the Chromium installation above.
 
 The command-line entry point uses the same scan and evaluation logic.
 
 ```bash
-python website_checker.py https://www.w3.org/WAI/tutorials/images/informative/ --mode html --max-images 3
-python website_checker.py https://example.com --mode browser --max-images 12 --ai
+python review_pipeline.py https://www.w3.org/WAI/tutorials/images/informative/ --mode html --max-images 3
+python review_pipeline.py https://example.com --mode browser --max-images 12 --assess
+# Explicit paid alternative:
+python review_pipeline.py https://example.com --provider openai --assess
 ```
 
-Each scan is saved beneath `runs/` with its own image captures and a `scan.json` checkpoint. Earlier scans can be reopened in the app. Each run gives image elements separate identifiers, including multiple uses of the same source image. Repeated AI checks reuse successful results when the image bytes, relevant context, prompt, and model match. Failed AI requests remain available for retry or human review. Changing the image or context invalidates its cached judgment.
+Each scan is saved beneath `runs/` with its own image captures and a `scan.json` checkpoint. Earlier scans can be reopened in the app. Each run gives image elements separate identifiers, including multiple uses of the same source image. Repeated model checks reuse results when the image bytes, relevant context, prompt, model revision, and generation settings match. Local and OpenAI results have separate cache entries. Switching engines restores matching results from that engine. Failed AI requests remain available for retry or human review. Changing the image or context invalidates its cached judgment.
 
 HTML mode resolves relative URLs, document base URLs, common lazy-loading attributes, and source sets. Browser mode uses `currentSrc` and screenshots of rendered image elements, which also supports SVG image sources and avoids separate cross-origin image downloads. Captures retain image-level evidence. The scanner records inaccessible or failed image downloads so the report still shows their metadata and rule flags.
 
@@ -65,13 +73,15 @@ HTML mode resolves relative URLs, document base URLs, common lazy-loading attrib
 
 The scanner examines top-level HTML `img` elements, their text alternatives, nearby text and HTML, and containing links or buttons. It preserves the difference between missing alt and empty alt, resolves `aria-labelledby` references, and records ARIA-hidden ancestry in browser mode. Rules flag missing alternatives, apparently unnamed image-based controls, generic labels, and filename-like descriptions. These are candidate problems for contextual verification.
 
-AI receives the captured image and a selected context object. Reference labels and reference rationales stay in the evaluation scripts. The structured response contains a decision, reason, and supporting evidence. Unparsed responses and API failures stay unresolved.
+AI receives the captured image and a selected context object. Reference labels and reference rationales stay in the evaluation scripts. The structured response contains a decision, reason, and supporting evidence. Unparsed responses and inference failures stay unresolved. Local output is validated against an exact JSON schema; malformed output is recorded as uncertain, with the raw response available for inspection.
 
 A finding applies to the inspected image and its containing control. Full WCAG conformance also involves keyboard interaction, forms, contrast, document structure, and other checks. CSS background images, canvas content, cross-origin frame contents, and authenticated pages are outside this prototype's coverage. Browser scrolling is bounded to eight viewport steps, so long or interaction-dependent pages can require additional inspection. HTML mode uses initial source markup and cannot establish the final rendered state. Surrounding HTML is capped at 24,000 characters and truncation is recorded.
 
 Public websites may restrict automated browsers or image downloads. Their failures are surfaced in the app. Run the app locally.
 
 ## External labeled benchmarks
+
+The recorded scores below describe the original OpenAI backend and original rule-first routing, preserved on `api-baseline-v1`. They do not measure the new local model or review-all policy. Local comparison uses separate prediction and report files; see [local evaluation](docs/local-model.md#compare-on-the-existing-external-inputs).
 
 Existing references can evaluate the prototype without new manual labels. The importer supports a restricted W3C ACT image-case subset and the accessible static-image subset of an ASSETS 2026 human-rating dataset. Model inputs and reference files are separate; source outcome titles and existing teacher answers are excluded.
 
@@ -128,7 +138,10 @@ The extraction step refreshes image paths after moving the folder. Cached fixtur
 | File | Responsibility |
 | --- | --- |
 | `review_app.py` | Website scan interface and existing development reviewer |
-| `website_checker.py` | URL capture, checkpoints, live AI routing, and CLI |
+| `website_checker.py` | URL capture and frozen original API routing for baseline reproduction |
+| `review_pipeline.py` | Current review-all routing, provider caches, disagreement policy, and CLI |
+| `local_model.py` | Pinned local Qwen weights, bounded inputs, inference, and strict output validation |
+| `local_benchmark.py` | Local predictions and scoring against the external snapshots |
 | `image_rules.py` | Shared rule flags for fixture and URL inputs |
 | `ai_check.py` | OpenAI request, structured result, and cache fingerprints |
 | `review_store.py` | SQLite persistence for development and website reviews |
@@ -139,7 +152,7 @@ The extraction step refreshes image paths after moving the folder. Cached fixtur
 | `answer_key.json`, `answer_key.csv` | Reference labels and explanations |
 | `tests/` | Focused extraction, caching, retry, persistence, and app checks |
 
-The application creates `human_reviews.db` locally. Personal review databases are excluded from version control. Website reviews use a separate table and are scoped to the scan and image identifier. Saving a decision again updates its latest value. A changed AI response requires a fresh review of the updated assessment. Notes are optional and their control starts collapsed.
+The application creates `human_reviews.db` locally. Personal review databases are excluded from version control. Website reviews use a separate table and are scoped to the scan and image identifier. Saving a decision again updates its latest value. A changed model response, engine, rule evidence, or combined decision requires a fresh review of the updated assessment. Notes are optional and their control starts collapsed.
 
 ## Verification
 
@@ -147,7 +160,9 @@ The application creates `human_reviews.db` locally. Personal review databases ar
 python -m unittest discover -s tests -v
 ```
 
-The automated tests cover source URL resolution, missing versus empty alt, label references, image-name evidence, transparency, context truncation, cache invalidation, partial API failures, reviewer persistence, and the Streamlit scan/review interactions. AI tests use a fake client to verify payloads, successful caching, and failure handling without API charges.
+The automated tests cover source URL resolution, missing versus empty alt, label references, image-name evidence, transparency, context truncation, cache invalidation, partial API failures, reviewer persistence, and the Streamlit scan/review interactions. Model tests use fake inference to verify payloads, provider isolation, rule-flagged image routing, conflict handling, malformed output, retries, and persistence without API charges or model downloads. Real inference is a separate smoke or benchmark step.
+
+The current suite passes 46 tests. Separately, real offline CPU inference flagged a mismatched office description and accepted a matching one. A poster request hit the generation budget and remained uncertain. These sanity checks were used during development and are not a held-out accuracy claim. See [recorded local inputs and outputs](docs/local-smoke-results.json). Apple MPS and the full external local benchmark remain untested.
 
 A live HTML scan was exercised against W3C's informative-images tutorial. A browser-mode scan and three real OpenAI assessments were subsequently completed on macOS against a public coffee-shop page; the exported observations and reviews are documented in the [case study](docs/website-case-study.md). The automated suite covers request construction and failure handling with a fake client, so running tests does not consume API credit.
 
@@ -160,5 +175,6 @@ A live HTML scan was exercised against W3C's informative-images tutorial. A brow
 - Playwright Python — https://playwright.dev/python/docs/library
 - OpenAI vision input — https://developers.openai.com/api/docs/guides/images-vision
 - Streamlit — https://docs.streamlit.io/
+- Local model — https://huggingface.co/Qwen/Qwen3-VL-2B-Instruct
 
 Fixture photographs and font sources are recorded in `asset_sources.json`. Font licenses are included in `assets/`. Charts, interface icons, the map, and event artwork were drawn for the synthetic dataset. Page brands and content are fictional demonstrations. Live capture files remain local to each scan.

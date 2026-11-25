@@ -6,9 +6,11 @@ import os
 
 import streamlit as st
 
-from ai_check import DEFAULT_MODEL, assessment_key, resolve_image_path
+from ai_check import DEFAULT_MODEL, resolve_image_path
+import local_model
+from review_pipeline import assessment_key, pending_ai_records, review_assessment_id, run_ai, select_backend
 import review_store
-from website_checker import pending_ai_records, run_ai, scan_in_worker
+from website_checker import save_run, scan_in_worker
 
 
 FOLDER = Path(__file__).resolve().parent
@@ -54,9 +56,23 @@ def evidence_panel(task, result):
         for item in result.get("evidence", []):
             st.write("• " + item)
         if task.get("ai_error"):
-            st.warning(f'AI request failed ({task["ai_error"]}). This case remains available for human review or retry.')
-        if task.get("context_truncated"):
-            st.info("The surrounding HTML was truncated. More page context may be needed.")
+            st.warning(f'Model request failed: {task["ai_error"]}. This case remains unresolved; retry or review it manually.')
+        if task.get("rule_flags"):
+            st.write("**Rule flags**")
+            for flag in task["rule_flags"]:
+                st.write("• " + flag)
+        if task.get("ai_result"):
+            model_result = task["ai_result"]
+            st.write("**Model decision**", LABELS.get(model_result["decision"], model_result["decision"]))
+            st.caption(f'Model: {model_result.get("model", "unknown")} · Provider: {model_result.get("provider", "openai")}')
+            if model_result.get("provider") == "local":
+                st.caption(f'Device: {model_result.get("device", "unknown")} · Time: {model_result.get("elapsed_seconds", 0):.1f}s')
+                with st.expander("Local model response"):
+                    st.text(model_result.get("raw_response", ""))
+        if task.get("disagreement"):
+            st.warning("Rules and model disagree. The combined assessment is uncertain until a person reviews it.")
+        if task.get("context_truncated") or task.get("ai_result", {}).get("context_truncated"):
+            st.info("Some page context was truncated before assessment. More context may be needed.")
         with st.expander("Surrounding text"):
             st.text(task.get("nearby_text", ""))
         with st.expander("Inspect surrounding HTML"):
@@ -93,6 +109,10 @@ def show_scan_results(run):
     st.subheader(run["title"])
     st.caption(run["url"])
     records = run["images"]
+    engine = st.selectbox("Assessment engine", ["Local model (no API charges)", "OpenAI API (paid)"], key="assessment_engine")
+    provider = "local" if engine.startswith("Local") else "openai"
+    select_backend(run, provider)
+    save_run(run)
     counts = st.columns(4)
     counts[0].metric("Image elements found", run["images_found"])
     counts[1].metric("Inspected", len(records))
@@ -107,26 +127,38 @@ def show_scan_results(run):
     uncached = 0
     for record in candidates:
         try:
-            uncached += record.get("ai_result", {}).get("assessment_key") != assessment_key(record)
+            uncached += record.get("ai_result", {}).get("assessment_key") != assessment_key(record, provider)
         except OSError:
             pass
+    if provider == "local":
+        st.caption(f'Experimental local model: {local_model.MODEL_ID}. Eligible rule-flagged images are included. Images and context stay on this computer; no OpenAI fallback is performed. Recorded OpenAI benchmark scores do not apply to this backend.')
+        ready = local_model.available()
+        if not ready:
+            st.info("Install local inference first: python -m pip install -r requirements-local.txt")
+        else:
+            st.caption("The first local run downloads model weights from Hugging Face. Later runs reuse downloaded weights. Loading may take a few minutes.")
+    else:
+        ready = bool(os.environ.get("OPENAI_API_KEY"))
+        st.caption(f'OpenAI model: {DEFAULT_MODEL}. Running sends the selected captures and context to OpenAI using API credit.')
+        if not ready:
+            st.info("Set OPENAI_API_KEY in the terminal, then restart Streamlit to enable OpenAI checks.")
     if uncached:
-        st.caption(f'AI checks will send {uncached} captured images and their surrounding HTML to OpenAI using API credit. Model: {DEFAULT_MODEL}.')
-        if not os.environ.get("OPENAI_API_KEY"):
-            st.info("Set OPENAI_API_KEY in the terminal, then restart Streamlit to enable AI checks.")
-        if st.button(f"Run AI on {uncached} images", disabled=not os.environ.get("OPENAI_API_KEY"), type="primary"):
-            progress = st.progress(0, text="Evaluating captured images…")
-            run_ai(run, progress=lambda done, total: progress.progress(done / total, text=f"AI check {done} of {total}"))
+        label = f"Run local model on {uncached} images" if provider == "local" else f"Run OpenAI on {uncached} images"
+        if st.button(label, disabled=not ready, type="primary"):
+            progress = st.progress(0, text="Loading model and evaluating captured images…")
+            run_ai(run, provider=provider, progress=lambda done, total: progress.progress(done / total, text=f"Model check {done} of {total}"))
             st.session_state["website_scan"] = run
             st.rerun()
+    elif candidates:
+        st.caption("Assessments for the selected engine are cached for these captures and settings.")
     else:
-        st.caption("Available AI judgments are cached for these image captures and this prompt.")
+        st.caption("There are no visible, successfully captured images eligible for model assessment.")
 
     reviews = review_store.website_reviews(run["scan_id"])
     table = []
     for record in records:
         ai_result = record.get("ai_result", {})
-        assessment_id = ai_result.get("response_id") or record.get("rule_reason", "")
+        assessment_id = review_assessment_id(record)
         review = reviews.get(record["image_key"])
         current_review = review if review and review["assessment_id"] == assessment_id else None
         table.append({
@@ -134,6 +166,8 @@ def show_scan_results(run):
             "Alt": "Missing" if record.get("alt") is None else record["alt"] or "(empty)",
             "Assessment": LABELS[record["decision"]],
             "Source": record["source"],
+            "Model decision": ai_result.get("decision", "Pending"),
+            "Disagreement": bool(record.get("disagreement")),
             "Human decision": current_review["decision"] if current_review else "Pending",
         })
     st.dataframe(table, hide_index=True, width="stretch")
@@ -144,12 +178,12 @@ def show_scan_results(run):
 
     selected = st.selectbox("Inspect an image", [record["image_key"] for record in records], key=f'image_{run["scan_id"]}')
     record = next(record for record in records if record["image_key"] == selected)
-    result = record.get("ai_result") or {
-        "decision": record["decision"], "reason": record.get("rule_reason", ""),
-        "evidence": record.get("rule_flags", []), "source": record["source"],
+    result = {
+        "decision": record["decision"], "reason": record.get("review_reason", record.get("rule_reason", "")),
+        "evidence": record.get("ai_result", {}).get("evidence", []), "source": record["source"],
     }
     evidence_panel(record, result)
-    assessment_id = result.get("response_id") or record.get("rule_reason", "")
+    assessment_id = review_assessment_id(record)
     previous = reviews.get(selected)
     if previous and previous["assessment_id"] != assessment_id:
         st.info("A previous review belongs to an earlier assessment. Review the updated evidence before saving again.")
