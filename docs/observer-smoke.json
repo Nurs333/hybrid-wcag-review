@@ -1,0 +1,62 @@
+{
+  "observation": {
+    "scene": "A small layered cake with a strawberry on top, served on a white plate with a gold base, on a wooden table",
+    "visible_text": [
+      "strawberry",
+      "cake",
+      "plate",
+      "wood"
+    ],
+    "limitations": "Text is not clearly legible and some elements are partially obscured"
+  },
+  "provenance": {
+    "provider": "local",
+    "model": "Qwen/Qwen3-VL-2B-Instruct",
+    "revision": "89644892e4d85e24eaac8bacfd4f463576704203",
+    "max_pixels": 262144,
+    "max_new_tokens": 256,
+    "timeout_seconds": 120,
+    "decoding": "greedy-json",
+    "image_sha256": "cea753d22c40744b5c9cb98bf0a7f8931a0c285949ee2cbdf9abc8d26aabc78a",
+    "prompt_version": "blind-observer-v2",
+    "prompt_sha256": "78848b5c84a61825b8113d709b52f640f6b1c899e02a482399532dcc5a16bc79",
+    "schema": {
+      "additionalProperties": false,
+      "properties": {
+        "scene": {
+          "maxLength": 200,
+          "title": "Scene",
+          "type": "string"
+        },
+        "visible_text": {
+          "items": {
+            "maxLength": 64,
+            "type": "string"
+          },
+          "maxItems": 4,
+          "title": "Visible Text",
+          "type": "array"
+        },
+        "limitations": {
+          "maxLength": 120,
+          "title": "Limitations",
+          "type": "string"
+        }
+      },
+      "required": [
+        "scene",
+        "visible_text",
+        "limitations"
+      ],
+      "title": "Observation",
+      "type": "object"
+    }
+  },
+  "usage": {
+    "device": "cpu",
+    "output_tokens": 77
+  },
+  "elapsed_seconds": 42.09,
+  "cache_hit": false,
+  "notice": "Unverified model observations; these do not decide accessibility conformance."
+}

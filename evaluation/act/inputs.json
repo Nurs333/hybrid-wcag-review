@@ -1,0 +1,109 @@
+{
+  "source": "https://www.w3.org/WAI/content-assets/wcag-act-rules/testcases.json",
+  "catalogue_sha256": "49051da603afa6d28b94ef3e758146dafcbe72bade7202a24636bab3ea4c0036",
+  "rule": "23a2a8",
+  "cases": [
+    {
+      "id": "32bfac8a98cc212aa7bf9151bf40f665a7f51696",
+      "url": "https://www.w3.org/WAI/content-assets/wcag-act-rules/testcases/23a2a8/32bfac8a98cc212aa7bf9151bf40f665a7f51696.html",
+      "sha256": "6637ff15d55820a3d7268c2b5de1415a41827b873e92797a6d635cf4a643192e"
+    },
+    {
+      "id": "38cc6a87fcc81fcc2248f0cd74ca48396b7aa432",
+      "url": "https://www.w3.org/WAI/content-assets/wcag-act-rules/testcases/23a2a8/38cc6a87fcc81fcc2248f0cd74ca48396b7aa432.html",
+      "sha256": "3e858cab00308b977c94efc4f4227f488e569595f68a79cc34c385a2db604743"
+    },
+    {
+      "id": "feb06eece7b158ab66a25bfa2c47a196309f0d93",
+      "url": "https://www.w3.org/WAI/content-assets/wcag-act-rules/testcases/23a2a8/feb06eece7b158ab66a25bfa2c47a196309f0d93.html",
+      "sha256": "2319c2fe290e9d102f292c375cc8c8b2ef7e215e6b54f92a22f28a4844302dc7"
+    },
+    {
+      "id": "40d83620b0bcbcf0e7380177384f48596823e7a9",
+      "url": "https://www.w3.org/WAI/content-assets/wcag-act-rules/testcases/23a2a8/40d83620b0bcbcf0e7380177384f48596823e7a9.html",
+      "sha256": "e7efd53487f42d7ee7b6e7ebdf5d9cb2e30682ef78854bf9ff47ec771f4edebd"
+    },
+    {
+      "id": "2f35ed62ed14afb6d9e8b886e95e846f0cfa0d2a",
+      "url": "https://www.w3.org/WAI/content-assets/wcag-act-rules/testcases/23a2a8/2f35ed62ed14afb6d9e8b886e95e846f0cfa0d2a.html",
+      "sha256": "6f2be637b82b64c8409c77212a77725543a48a685f9d4e8b5707d027997c66b5"
+    },
+    {
+      "id": "e8f40f5af06646ef15283302903f6c78f7d7a505",
+      "url": "https://www.w3.org/WAI/content-assets/wcag-act-rules/testcases/23a2a8/e8f40f5af06646ef15283302903f6c78f7d7a505.html",
+      "sha256": "14bae5b0e3d76b2d4d5ebf1eb49416eabed798535172a5ccc05c8a9265ac3cc6"
+    },
+    {
+      "id": "13b8678881fba03e7465f82b5550abc5093f7968",
+      "url": "https://www.w3.org/WAI/content-assets/wcag-act-rules/testcases/23a2a8/13b8678881fba03e7465f82b5550abc5093f7968.html",
+      "sha256": "bb34439a56d399a1187b77cf396bfe6a65b7a48159651803a50c27ccf529b6c0"
+    },
+    {
+      "id": "ba9cdf6d0c336f0abf7cd2992c4a2a62c6c719fd",
+      "url": "https://www.w3.org/WAI/content-assets/wcag-act-rules/testcases/23a2a8/ba9cdf6d0c336f0abf7cd2992c4a2a62c6c719fd.html",
+      "sha256": "abf523919745ca80bc3be539f23d1bfd601bb58edf953881db34d598f2b2838e"
+    },
+    {
+      "id": "8006d1541dc71b93e6ec4d101a386e0043d1a521",
+      "url": "https://www.w3.org/WAI/content-assets/wcag-act-rules/testcases/23a2a8/8006d1541dc71b93e6ec4d101a386e0043d1a521.html",
+      "sha256": "2ece8da2fcea26b7680d50164c4bcbe382ce6f0f7b5545d37caa4f24c24037a7"
+    },
+    {
+      "id": "496963cfd35d4873c010469c47c84d4358fba035",
+      "url": "https://www.w3.org/WAI/content-assets/wcag-act-rules/testcases/23a2a8/496963cfd35d4873c010469c47c84d4358fba035.html",
+      "sha256": "a497b788803567f91b8f6edd421688344936fe3320edaffd3bbe407bebf1ffb4"
+    },
+    {
+      "id": "fef9a3ad8b2f2a6beeaf44ef7dafce08e743ea67",
+      "url": "https://www.w3.org/WAI/content-assets/wcag-act-rules/testcases/23a2a8/fef9a3ad8b2f2a6beeaf44ef7dafce08e743ea67.html",
+      "sha256": "9267ff8d92f4317dff498813783d861f6f4cb85b10ce1c95096900ba4125a6a9"
+    },
+    {
+      "id": "b0348c1e6fced2df1ebd93caef4d383f6c7a0461",
+      "url": "https://www.w3.org/WAI/content-assets/wcag-act-rules/testcases/23a2a8/b0348c1e6fced2df1ebd93caef4d383f6c7a0461.html",
+      "sha256": "cd1e00c782bf51e6cbbc41918779173ab44699bd63c70b1468a9e291f6022a37"
+    },
+    {
+      "id": "d70470a37db713810be85275e5d0c698f85ab320",
+      "url": "https://www.w3.org/WAI/content-assets/wcag-act-rules/testcases/23a2a8/d70470a37db713810be85275e5d0c698f85ab320.html",
+      "sha256": "6bab65ea88ce0a4812a288796972bc203118e0022947fe99c0f171c3d5c43b80"
+    },
+    {
+      "id": "cd3b3a4046451da9b9cc3e166c09d27583a2c30b",
+      "url": "https://www.w3.org/WAI/content-assets/wcag-act-rules/testcases/23a2a8/cd3b3a4046451da9b9cc3e166c09d27583a2c30b.html",
+      "sha256": "7d93380d0d06d4687e8684755a5de43530ba5318c4d73db6a509f9bb0f144158"
+    },
+    {
+      "id": "25e5364c0a1320a08e2742fa59a0f8627591bc61",
+      "url": "https://www.w3.org/WAI/content-assets/wcag-act-rules/testcases/23a2a8/25e5364c0a1320a08e2742fa59a0f8627591bc61.html",
+      "sha256": "b1dcb9eb4f7a949f14eaadb5a49d0b5beed8b1b17eb4b4277258c483e834c5d4"
+    },
+    {
+      "id": "e15b9aca4aaa53cb3a96ae48e78e1af064b9a01d",
+      "url": "https://www.w3.org/WAI/content-assets/wcag-act-rules/testcases/23a2a8/e15b9aca4aaa53cb3a96ae48e78e1af064b9a01d.html",
+      "sha256": "1a4b7278dd673498204395f80d8c3596506d8e5730b85d6e88abd991c6e883f6"
+    },
+    {
+      "id": "7d696551efaafa0da33bb6e56b8b43707c7c7de9",
+      "url": "https://www.w3.org/WAI/content-assets/wcag-act-rules/testcases/23a2a8/7d696551efaafa0da33bb6e56b8b43707c7c7de9.html",
+      "sha256": "d87791720e99509507957e3651f45f3900c7b351e087d64a9827abedb3dfe767"
+    },
+    {
+      "id": "f7692caf5f8c788d58e1aeb8d4f1f240fafdfa91",
+      "url": "https://www.w3.org/WAI/content-assets/wcag-act-rules/testcases/23a2a8/f7692caf5f8c788d58e1aeb8d4f1f240fafdfa91.html",
+      "sha256": "fe784d1be92b6da34fa3eec24117301e49c544c13cbcb1f4905e28d760eb8651"
+    }
+  ],
+  "assets": [
+    {
+      "url": "https://www.w3.org/WAI/content-assets/wcag-act-rules/test-assets/shared/w3c-logo.png",
+      "file": "w3c-logo.png.b64",
+      "sha256": "1232b2fa79e0d1348f70cf85bc446ffd394cd07a080d500aa5ec703fc9ef9047"
+    },
+    {
+      "url": "https://www.w3.org/WAI/content-assets/wcag-act-rules/test-assets/shared/background.png",
+      "file": "background.png.b64",
+      "sha256": "2e0ce1f118dbf7353af0afc91bf59e44a4165dfef2cfa7bfe100d1298c995c4b"
+    }
+  ]
+}

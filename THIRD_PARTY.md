@@ -1,9 +1,15 @@
-# Third-party material
+# Third-party sources
 
-The fixture photographs and fonts are listed with their source URLs in `asset_sources.json`. The font licenses are included in `assets/`. Those assets remain subject to their original licenses and are not relicensed as project source code.
+## W3C ACT fixtures
 
-The case-study screenshot in `docs/screenshots/website-finding.png` contains an image captured from a public 49th Parallel webpage. It is included to document a specific accessibility assessment. The underlying coffee imagery and brand marks belong to their respective owners. The project has no affiliation with the coffee shop.
+`evaluation/act/inputs/*.html`, `inputs.json`, and `references.json` are selected from the [W3C ACT test catalogue](https://www.w3.org/WAI/content-assets/wcag-act-rules/testcases.json), rule [23a2a8](https://www.w3.org/WAI/standards-guidelines/act/rules/23a2a8/). Two original PNG assets are preserved as base64 text for portable offline rendering; decoding restores identical source bytes. Source URLs and hashes are recorded in the manifest. Fixture titles and author/copyright metadata are preserved in the source HTML.
 
-The local fixture brands, event artwork, charts, map, and interface examples are synthetic demonstrations. Benchmark reference labels were proposed for this project and have not been independently certified.
+The catalogue identifies its license at <https://act-rules.github.io/pages/license/>. The full notice is included in [evaluation/act/LICENSE-W3C.md](evaluation/act/LICENSE-W3C.md). Consult it and the linked W3C notices for reuse conditions. These fixtures are attributed regression material; this repository does not claim authorship of them.
 
-The optional local backend downloads [Qwen3-VL-2B-Instruct](https://huggingface.co/Qwen/Qwen3-VL-2B-Instruct), distributed by the Qwen team under Apache-2.0. The pinned weights and their model documentation are downloaded separately and are not included in this repository. The project uses pretrained inference; it does not claim authorship of those weights.
+## Qwen weights
+
+Optional local inference downloads `Qwen/Qwen3-VL-2B-Instruct` from Hugging Face, revision `89644892e4d85e24eaac8bacfd4f463576704203`. The model card declares Apache-2.0. The weights are not included in this repository and were not trained or fine-tuned for this project. See the upstream model card and license before redistributing them.
+
+## Dependencies
+
+Playwright/Chromium, Streamlit, PyTorch, Transformers, Pydantic, Pillow, LM Format Enforcer, and the optional OpenAI SDK retain their respective licenses. Installing them does not transfer their authorship to this project. The built-in demo uses an original simple SVG illustration and does not reuse the prototype's stock photos.

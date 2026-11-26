@@ -1,5 +1,0 @@
-document.querySelectorAll('[data-message]').forEach(button=>button.addEventListener('click',()=>{document.getElementById('status').textContent=button.dataset.message;}));
-document.querySelectorAll('.sizes button').forEach(button=>button.addEventListener('click',()=>{document.querySelectorAll('.sizes button').forEach(item=>item.setAttribute('aria-pressed','false'));button.setAttribute('aria-pressed','true');document.getElementById('status').textContent='Size '+button.textContent+' selected.';}));
-document.querySelectorAll('form').forEach(form=>form.addEventListener('submit',event=>{event.preventDefault();document.getElementById('status').textContent=form.dataset.confirm||'Your request has been saved in this local demo.';}));
-document.querySelectorAll('[data-dismiss]').forEach(button=>button.addEventListener('click',()=>{document.getElementById(button.dataset.dismiss).hidden=true;document.getElementById('status').textContent='Notice dismissed.';}));
-document.querySelectorAll('[data-print]').forEach(button=>button.addEventListener('click',()=>window.print()));
